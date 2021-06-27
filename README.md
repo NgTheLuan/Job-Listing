@@ -1,9 +1,9 @@
-## JOB LISTING SITE 🦔
+# MERN Stack - JobListing 🦔
 
-### Overview
+> The Recruitment Site With The Best Jobs Gives Employees Many Choices.
 
-<img src="https://github.com/NgTheLuan/Job-Listing/blob/main/client/public/assets/img/Browser-job.png" alt="drawing" width="380" height="450"/>
+## Demo: https://joblisting-web.netlify.app
 
-### Demo
+### User interface
 
-[JobListing-web](https://joblisting-web.netlify.app/)
+![alt](https://res.cloudinary.com/ngtheluan/image/upload/v1624765808/Job-Listing/Browser-job_k34pa0.png)
