@@ -1,0 +1,3 @@
+## SERVER 🦔
+
+- Start: `npm start`
