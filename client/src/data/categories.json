@@ -1,0 +1,614 @@
+[
+  {
+    "_id": {
+      "$oid": "6098baed1fc5d5556cb80cae"
+    },
+    "career": {
+      "careerName": "Technology",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/laptop-2015590-1702637.png",
+      "total": 50
+    },
+    "createdAt": {
+      "$date": "2021-05-10T04:47:41.992Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-10T04:47:41.992Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6098bb131fc5d5556cb80caf"
+    },
+    "career": {
+      "careerName": "Real Estate",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/real-estate-2264518-1926665.png",
+      "total": 23
+    },
+    "createdAt": {
+      "$date": "2021-05-10T04:48:19.329Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-10T04:48:19.329Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6098bb421fc5d5556cb80cb0"
+    },
+    "career": {
+      "careerName": "Delivery",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/delivery-2447956-2044992.png",
+      "total": 15
+    },
+    "createdAt": {
+      "$date": "2021-05-10T04:49:06.679Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-10T04:49:06.679Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6098bb831fc5d5556cb80cb2"
+    },
+    "career": {
+      "careerName": "Education",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/education-1953889-1651467.png",
+      "total": 55
+    },
+    "createdAt": {
+      "$date": "2021-05-10T04:50:11.207Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-10T04:50:11.207Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6098bbc11fc5d5556cb80cb4"
+    },
+    "career": {
+      "careerName": "Guard - Security",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/guard-3190190-2658612.png",
+      "total": 8
+    },
+    "createdAt": {
+      "$date": "2021-05-10T04:51:13.847Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-10T04:51:13.847Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6098bde71fc5d5556cb80cb5"
+    },
+    "career": {
+      "careerName": "Spa",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/spa-1404864-1185820.png",
+      "total": 12
+    },
+    "createdAt": {
+      "$date": "2021-05-10T05:00:23.710Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-10T05:00:23.710Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6098bf291fc5d5556cb80cb6"
+    },
+    "career": {
+      "careerName": "Journalism",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/journalism-2177699-1823026.png",
+      "total": 21
+    },
+    "createdAt": {
+      "$date": "2021-05-10T05:05:45.428Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-10T05:05:45.428Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a863a621b982a38800145"
+    },
+    "career": {
+      "careerName": "Bank",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/bank-2076419-1756270.png",
+      "total": 51
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:27:22.795Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:27:22.795Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a86b0621b982a38800146"
+    },
+    "career": {
+      "careerName": "Labor Safety",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/labor-vest-3421050-2859388.png",
+      "total": 14
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:29:20.512Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:29:20.512Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a86cc621b982a38800147"
+    },
+    "career": {
+      "careerName": "Sales - Business",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/business-3572030-2986600.png",
+      "total": 12
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:29:48.001Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:29:48.001Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a86df621b982a38800148"
+    },
+    "career": {
+      "careerName": "Wholesale - Retail",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/retail-shop-2072280-1751591.png",
+      "total": 21
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:30:07.764Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:30:07.764Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a86fa621b982a38800149"
+    },
+    "career": {
+      "careerName": "Life Insurance",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/life-insurance-2809063-2331523.png",
+      "total": 18
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:30:34.672Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:30:34.672Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a870f621b982a3880014a"
+    },
+    "career": {
+      "careerName": "Translators",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/localization-and-translation-3228160-2697196.png",
+      "total": 21
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:30:55.049Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:30:55.049Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8720621b982a3880014b"
+    },
+    "career": {
+      "careerName": "Post - Telecommunication",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/telecommunication-3286626-2752792.png",
+      "total": 15
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:31:12.244Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:31:12.244Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8738621b982a3880014c"
+    },
+    "career": {
+      "careerName": "Breed - Veterinary",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/bulldog-12-877126.png",
+      "total": 25
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:31:36.867Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:31:36.867Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8749621b982a3880014d"
+    },
+    "career": {
+      "careerName": "Stock",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/stock-41-498914.png",
+      "total": 14
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:31:53.074Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:31:53.074Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a875a621b982a3880014e"
+    },
+    "career": {
+      "careerName": "Biotechnology",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/microscope-442-766140.png",
+      "total": 17
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:32:10.490Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:32:10.490Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a876e621b982a3880014f"
+    },
+    "career": {
+      "careerName": "Nutrition",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/nutrition-1401376-1187894.png",
+      "total": 11
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:32:30.496Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:32:30.496Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a877e621b982a38800150"
+    },
+    "career": {
+      "careerName": "Mechanical",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/mechanical-3369041-2813795.png",
+      "total": 32
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:32:46.106Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:32:46.106Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8792621b982a38800151"
+    },
+    "career": {
+      "careerName": "Oil and Gas",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/advanced-oil-and-gas-exploration-and-recovery-1726543-1467442.png",
+      "total": 26
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:33:06.062Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:33:06.062Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a87a6621b982a38800152"
+    },
+    "career": {
+      "careerName": "Textile",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/textile-3272604-2752360.png",
+      "total": 17
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:33:26.789Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:33:26.789Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a87b7621b982a38800153"
+    },
+    "career": {
+      "careerName": "Tourism",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/tourism-2140320-1800884.png",
+      "total": 18
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:33:43.265Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:33:43.265Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a87c7621b982a38800154"
+    },
+    "career": {
+      "careerName": "Pharmaceutical",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/pill-2909255-2411848.png",
+      "total": 18
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:33:59.506Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:33:59.506Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a87dd621b982a38800155"
+    },
+    "career": {
+      "careerName": "Electronic",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/electronic-2549702-2132852.png",
+      "total": 24
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:34:21.459Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:34:21.459Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a87ee621b982a38800156"
+    },
+    "career": {
+      "careerName": "Carpenter",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/wood-3118117-2602060.png",
+      "total": 25
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:34:38.296Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:34:38.296Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a880a621b982a38800157"
+    },
+    "career": {
+      "careerName": "Entertaiment",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/entertainment-1914112-1622155.png",
+      "total": 12
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:35:06.961Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:35:06.961Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a882e621b982a38800158"
+    },
+    "career": {
+      "careerName": "Nautical",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/nautical-1621587-1373718.png",
+      "total": 21
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:35:42.796Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:35:42.796Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8840621b982a38800159"
+    },
+    "career": {
+      "careerName": "Aviation",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/aeroplane-83-673266.png",
+      "total": 15
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:36:00.778Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:36:00.778Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8851621b982a3880015a"
+    },
+    "career": {
+      "careerName": "Accountant",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/accountant-1984618-1680448.png",
+      "total": 25
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:36:17.037Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:36:17.037Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8863621b982a3880015b"
+    },
+    "career": {
+      "careerName": "Architecture",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/architecture-1714935-1454641.png",
+      "total": 28
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:36:35.944Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:36:35.944Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8872621b982a3880015c"
+    },
+    "career": {
+      "careerName": "Law",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/law-2145356-1803222.png",
+      "total": 16
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:36:50.005Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:36:50.005Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609a8887621b982a3880015d"
+    },
+    "career": {
+      "careerName": "Restaurant Hotel",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/restaurant-2493716-2085887.png",
+      "total": 36
+    },
+    "createdAt": {
+      "$date": "2021-05-11T13:37:11.973Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-11T13:37:11.973Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609bd9b6cdf0000b583827b2"
+    },
+    "career": {
+      "careerName": "Graduated - Internship",
+      "icon": "https://cdn.iconscout.com/icon/free/png-256/graduated-3148669-2621199.png",
+      "total": 22
+    },
+    "createdAt": {
+      "$date": "2021-05-12T13:35:50.580Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-12T13:35:50.580Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609bdb7bcdf0000b583827b3"
+    },
+    "career": {
+      "careerName": "Agriculture",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/agriculture-1923346-1629134.png",
+      "total": 21
+    },
+    "createdAt": {
+      "$date": "2021-05-12T13:43:23.809Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-12T13:43:23.809Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609bdd89cdf0000b583827b4"
+    },
+    "career": {
+      "careerName": "Seafood",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/seafood-3329889-2772838.png",
+      "total": 42
+    },
+    "createdAt": {
+      "$date": "2021-05-12T13:52:09.781Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-12T13:52:09.781Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "609bde2acdf0000b583827b5"
+    },
+    "career": {
+      "careerName": "Others",
+      "icon": "https://cdn.iconscout.com/icon/premium/png-256-thumb/others-2366937-1976430.png",
+      "total": 59
+    },
+    "createdAt": {
+      "$date": "2021-05-12T13:54:50.743Z"
+    },
+    "updatedAt": {
+      "$date": "2021-05-12T13:54:50.743Z"
+    },
+    "__v": 0
+  }
+]

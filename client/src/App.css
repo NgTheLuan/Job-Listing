@@ -1,0 +1,59 @@
+/* input,
+button {
+  width: 200px;
+  height: 30px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.head {
+  padding-left: 20%;
+  padding-bottom: 2%;
+}
+
+.main {
+  margin-left: 18%;
+}
+
+.in-out {
+  padding-left: 10%;
+}
+
+.job {
+  width: 350px;
+  height: 280px;
+  border: 1px solid black;
+  margin: 10px;
+  font-size: 12px;
+  float: left;
+  text-align: center;
+}
+
+.new-cus h1 {
+  font-size: 3rem;
+}
+
+.btnUpdate,
+.btnAdd {
+  border: none;
+  cursor: pointer;
+  width: 12rem;
+  height: 4rem;
+}
+
+.btnDelete {
+  width: 95%;
+  border: none;
+  cursor: pointer;
+  margin-top: 5%;
+  height: 4rem;
+} */
+.error-message {
+  width: 100%;
+  display: inline-block;
+  padding: 5px;
+  background: red;
+  color: #fff;
+  text-align: center;
+  margin: 0.5rem 0;
+}

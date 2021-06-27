@@ -1,0 +1,22 @@
+a[disabled] {
+  pointer-events: none;
+}
+
+.btn_view {
+  font-size: 14px;
+  border-radius: 2px;
+  padding: 14px 20px;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 8px rgba(102, 103, 107, 0.15);
+}
+
+.btn_view:hover {
+  background-color: #11b719;
+}
+
+.job-position {
+  text-transform: capitalize;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

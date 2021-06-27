@@ -1,0 +1,29 @@
+[
+  {
+    "password": "12345678",
+    "dob": "130899",
+    "gender": "male",
+    "contact": "12345",
+    "address": "",
+    "role": 1,
+    "fName": "nguyen",
+    "lName": "loc",
+    "userName": "thanhloc",
+    "email": "thanhloc@gmail.com",
+    "tel": "0774784101"
+  },
+
+  {
+    "password": "luan123",
+    "dob": "210899",
+    "gender": "male",
+    "contact": "12345",
+    "address": "",
+    "role": 1,
+    "fName": "nguyen",
+    "lName": "luan",
+    "userName": "theluan",
+    "email": "theluan@gmail.com",
+    "tel": "0909774474"
+  }
+]

@@ -1,0 +1,138 @@
+[
+  {
+    "_id": {
+      "$oid": "609e530563239d1e680761bc"
+    },
+    "cvs": [],
+    "jobs": [],
+    "userName": "Thế Luân",
+    "email": "luan@admin.com",
+    "password": "$2a$08$8rWLwjxF7/mnO2pGoV3hjeVuUMqaen1ujfOKPmEbSuFjWa/tZe2Ua",
+    "role": "admin",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "60a74621828cf42ad85af64f"
+    },
+    "cvs": [
+      {
+        "$oid": "60abb8e2e8da150840666396"
+      },
+      {
+        "$oid": "60ae27b20cbec93c5c9581d7"
+      },
+      {
+        "$oid": "60ae28230cbec93c5c9581d8"
+      },
+      {
+        "$oid": "60ae28ca0cbec93c5c9581d9"
+      },
+      {
+        "$oid": "60ae29430cbec93c5c9581e2"
+      },
+      {
+        "$oid": "60ae29820cbec93c5c9581e3"
+      },
+      {
+        "$oid": "60af6be17969dd3074841bd3"
+      },
+      {
+        "$oid": "60af6f074e6705572088c433"
+      },
+      {
+        "$oid": "60af70a64e6705572088c438"
+      },
+      {
+        "$oid": "60b48b8ab04a793d1cb3ad28"
+      },
+      {
+        "$oid": "60b490b3b04a793d1cb3ad2d"
+      },
+      {
+        "$oid": "60b49d73b04a793d1cb3ad32"
+      },
+      {
+        "$oid": "60b49e56b04a793d1cb3ad37"
+      },
+      {
+        "$oid": "60b6448bb1142913e4adb486"
+      },
+      {
+        "$oid": "60b85e5b9175452d142ac013"
+      },
+      {
+        "$oid": "60b8a3f004d99b1f008500cb"
+      },
+      {
+        "$oid": "60b8a40804d99b1f008500cc"
+      },
+      {
+        "$oid": "60b8d50beada0552e0bb9ddc"
+      },
+      {
+        "$oid": "60bc77d3587b8e37402379ce"
+      },
+      {
+        "$oid": "60bc7837587b8e37402379cf"
+      },
+      {
+        "$oid": "60bc787f587b8e37402379d4"
+      },
+      {
+        "$oid": "60bc9284d8caaf39a8a9d26d"
+      },
+      {
+        "$oid": "60bcbe514a36010d6059946e"
+      },
+      {
+        "$oid": "60bd8862587809393c17f357"
+      },
+      {
+        "$oid": "60bd8a77587809393c17f362"
+      },
+      {
+        "$oid": "60bd928e587809393c17f367"
+      },
+      {
+        "$oid": "60bd9c72587809393c17f368"
+      }
+    ],
+    "jobs": [],
+    "userName": "The Luan",
+    "email": "luan@user.com",
+    "password": "$2a$08$sOv7GIaLTXsIkfqUtxQdqeR.Eqz1uZS04tGocDSpppMm82U06qvWu",
+    "role": "user",
+    "__v": 47,
+    "favorite": [""]
+  },
+  {
+    "_id": {
+      "$oid": "60bcef3b86c0fb42ec228ced"
+    },
+    "cvs": [
+      {
+        "$oid": "60bcef3f86c0fb42ec228cee"
+      }
+    ],
+    "jobs": [],
+    "userName": "Nguyễn Thành Lộc",
+    "email": "loc@user.com",
+    "password": "$2a$08$tyOdA33cBfDsskkJ2I3Qk..zkITEZ3NcvH4dx2mKMTGM7VIwrkMiu",
+    "role": "user",
+    "__v": 1
+  },
+  {
+    "_id": {
+      "$oid": "60bdd701935e8b265c360135"
+    },
+    "cvs": [],
+    "jobs": [],
+    "favorite": [],
+    "userName": "test",
+    "email": "test@user.com",
+    "password": "$2a$08$b48NC3hAZYGDQvVisz34ZOP/nL6jeafTxfltU3FOqa8IB6WBpPAfi",
+    "role": "user",
+    "__v": 0
+  }
+]
