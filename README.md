@@ -4,6 +4,4 @@
 
 ## Demo: https://joblisting-web.netlify.app
 
-### User interface
-
 ![alt](https://res.cloudinary.com/ngtheluan/image/upload/v1624765808/Job-Listing/Browser-job_k34pa0.png)
