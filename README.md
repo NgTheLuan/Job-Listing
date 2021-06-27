@@ -1,3 +1,3 @@
 ## JOB LISTING SITE 🦔
 
-![alt](https://res.cloudinary.com/ngtheluan/image/upload/v1624764171/Job-Listing/Browser-job_ggw3z8.png)
+<img src="https://github.com/NgTheLuan/Job-Listing/blob/main/client/public/assets/img/Browser-job.png" alt="drawing" width="300" height="450"/>
