@@ -18,7 +18,7 @@ function ListPage() {
   const deleteJob = async (id) => {
     try {
       setLoading(true);
-      await axios.delete(`https://joblisting-web.herokuapp.com/api/jobs/${id}`).then((res) => {
+      await axios.delete(`/api/jobs/${id}`).then((res) => {
         // console.log(res.data);
       });
 

@@ -12,7 +12,7 @@ function Error() {
               4<span>0</span>4
             </h2>
             <p>Oops...looks like we got lost</p>
-            <a class="btn btn-success small-btn" href="/">
+            <a class="btn btn-success small-btn" href="# ">
               Let's Go Home
             </a>
           </div>

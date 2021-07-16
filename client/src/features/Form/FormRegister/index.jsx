@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../components/Context/AuthContext';
-import { useHttpClient } from '../../../components/Hooks/Http-hook';
+import { useHttpClient } from "../../../components/Hooks/Http-hook";
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
@@ -11,14 +11,14 @@ const FormRegister = () => {
   const [passwordHash, setPasswordHash] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const { sendRequest } = useHttpClient();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   async function register(e) {
     e.preventDefault();
     try {
       const responseData = await sendRequest(
-        'https://joblisting-web.herokuapp.com/api/users/signup',
-        'POST',
+        "http://localhost:5000/api/users/signup",
+        "POST",
         JSON.stringify({
           userName,
           email,
@@ -26,22 +26,25 @@ const FormRegister = () => {
           confirmPassword,
         }),
         {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         }
       );
       console.log(responseData);
-      Swal.fire('Awesome!', "You're successfully interested in!", 'success').then((result) => {
-        if (result.isConfirmed || result.isDismissed) {
+      Swal.fire('Awesome!', "You're successfully interested in!", 'success').then(
+        (result) => {
+          if (result.isConfirmed || result.isDismissed) {
+            
+          }
         }
-      });
+      );
       auth.login(responseData.user.id);
       auth.authorization(responseData.user.userName);
       auth.authorization(responseData.user.role);
     } catch (err) {
       console.error(err);
-      setError('Something went wrong, please try again.');
+      setError("Something went wrong, please try again.");
       setTimeout(() => {
-        setError('');
+        setError("");
       }, 5000);
     }
   }
@@ -128,7 +131,9 @@ const FormRegister = () => {
                           Remember Me
                         </label>
                       </div>
-                      <div>{error && <span className="error-message">{error}</span>}</div>
+                      <div>
+                        {error && <span className="error-message">{error}</span>}
+                      </div>
                       <button type="submit" className="btn btn-login" style={{ height: '1%' }}>
                         Register
                       </button>
@@ -136,12 +141,7 @@ const FormRegister = () => {
                   </form>
                   <div style={{ textAlign: 'center', marginTop: '-4%' }}>
                     <div>
-                      <p>
-                        Already have an account?{' '}
-                        <Link to="/login">
-                          <label style={{ cursor: 'pointer' }}>Click here!</label>
-                        </Link>
-                      </p>
+                      <p>Already have an account? <Link to="/login"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></p>
                     </div>
                   </div>
                 </div>
@@ -152,6 +152,6 @@ const FormRegister = () => {
       </section>
     </>
   );
-};
+}
 
 export default FormRegister;

@@ -16,7 +16,7 @@ function JobList({ job, deleteJob }) {
     });
     if (check) {
       setFavorite([...favorite, { ...favoritejob }]);
-      await axios.patch(`https://joblisting-web.herokuapp.com/api/users/addfavoritejob/${auth.userId}`, {
+      await axios.patch(`/api/users/addfavoritejob/${auth.userId}`, {
         favorite: [...favorite, { ...favoritejob }],
       });
     } else {
@@ -27,7 +27,7 @@ function JobList({ job, deleteJob }) {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get(`https://joblisting-web.herokuapp.com/api/users/${auth.userId}`);
+        const res = await axios.get(`/api/users/${auth.userId}`);
 
         setFavorite(res.data.user.favorite);
         // console.log(favorite);

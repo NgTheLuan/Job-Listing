@@ -10,19 +10,19 @@ const Extras = (props) => {
   const [formState, formActions] = useExtra();
   const [extra, setExtra] = useState({
     addInfor: '',
-  });
+  })
 
   useEffect(() => {
     if (!cvState.extraId) {
       const fetch = async () => {
-        const extra = await axios.post(`https://joblisting-web.herokuapp.com/api/cvs/createExtra/${cvState.cvId}`);
+        const extra = await axios.post(`http://localhost:5000/api/cvs/createExtra/${cvState.cvId}`);
         cvActions.saveExtraId(extra.data.cv._id);
-      };
+      }
       fetch();
     } else {
       return () => handleSubmit;
     }
-  }, [cvState.cvId]);
+  }, [cvState.cvId])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,7 +33,7 @@ const Extras = (props) => {
     };
     await formActions.stepExtra(data);
     props.history.push('/createcv-review');
-  };
+  }
 
   const previous = (data) => {
     console.log(data);

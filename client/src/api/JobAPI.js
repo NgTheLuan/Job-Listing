@@ -17,9 +17,7 @@ function JobAPI() {
   //JOB-LIST
   useEffect(() => {
     const getJobs = async () => {
-      const res = await axios.get(
-        `https://joblisting-web.herokuapp.com/api/jobs?limit=${page * 6}&${category}&${sort}&position[regex]=${search}`
-      );
+      const res = await axios.get(`/api/jobs?limit=${page * 6}&${category}&${sort}&position[regex]=${search}`);
       setJobs(res.data.jobs);
 
       setLoading(false);
@@ -34,9 +32,7 @@ function JobAPI() {
   //HOT-JOB
   useEffect(() => {
     const getJobHot = async () => {
-      const res = await axios.get(
-        `https://joblisting-web.herokuapp.com/api/jobs/jobhot?limit=${page * 3}&isHot[regex]=true`
-      );
+      const res = await axios.get(`/api/jobs/jobhot?limit=${page * 3}&isHot[regex]=true`);
       setJobHot(res.data.jobhot);
       // setResult(res.data.result);;
       // console.log(res);

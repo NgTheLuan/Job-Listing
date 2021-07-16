@@ -28,7 +28,7 @@ const Profiles = (props) => {
         cvId: cvState.cvId,
         profileId: cvState.profileId,
       };
-      await formActions.stepProfile(data);
+      await formActions.stepProfile(data)
       props.history.push('/createcv-education');
     },
   });
@@ -36,14 +36,14 @@ const Profiles = (props) => {
   useEffect(() => {
     if (!cvState.profileId) {
       const fetch = async () => {
-        const profile = await axios.post(`https://joblisting-web.herokuapp.com/api/cvs/createProfile/${cvState.cvId}`); //create empty CV
+        const profile = await axios.post(`http://localhost:5000/api/cvs/createProfile/${cvState.cvId}`); //create empty CV
         cvActions.saveProfileId(profile.data.cv._id);
-      };
+      }
       fetch();
     } else {
       return () => formik.handleSubmit;
     }
-  }, [cvState.cvId]);
+  }, [cvState.cvId])
 
   const previous = () => {
     props.history.push('/createcv');

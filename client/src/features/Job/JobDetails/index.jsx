@@ -235,12 +235,9 @@ function DetailPage() {
             </h2>
 
             <div style={{ marginTop: '20px', width: '100%' }}>
-              {/* <Box color="white" p={1} fontSize="120%" color="text.secondary">
+              <Box color="white" p={1} fontSize="120%" color="text.secondary">
                 {HtmlReactParse(detailJob.otherInfo)}
-              </Box> */}
-              <ul class="detail-list">
-                <li>{detailJob.otherInfo}</li>
-              </ul>
+              </Box>
             </div>
           </div>
         </div>

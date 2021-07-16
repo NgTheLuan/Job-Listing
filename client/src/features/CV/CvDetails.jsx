@@ -11,7 +11,7 @@ const CvDetails = () => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const responseData = await sendRequest(`https://joblisting-web.herokuapp.com/api/cvs/${cvId}`);
+        const responseData = await sendRequest(`http://localhost:5000/api/cvs/${cvId}`);
         setLoadedCvs(responseData.cv);
         console(loadedCvs.education);
       } catch (error) {}
@@ -112,12 +112,12 @@ const CvDetails = () => {
 
                   <div class="apply-job-detail">
                     <p>{loadedCvs.bio}</p>
-                  </div>
+                  </div>                 
 
                   <div class="apply-job-detail">
                     <h2 class="detail-title" style={{ fontWeight: 'bold', color: '#11B719' }}>
                       Education
-                    </h2>
+                    </h2>               
                     <div class="apply-job-detail">
                       <p>{HtmlReactParse(loadedCvs.education[0].education)}</p>
                     </div>

@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../../components/Context/AuthContext';
-import { useHttpClient } from '../../../components/Hooks/Http-hook';
+import { useHttpClient } from "../../../components/Hooks/Http-hook";
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 
@@ -9,31 +9,31 @@ const FormLogin = () => {
   const [email, setEmail] = useState('');
   const [passwordHash, setPasswordHash] = useState('');
   const { sendRequest } = useHttpClient();
-  const [error, setError] = useState('');
+  const [error, setError] = useState("");
 
   async function login(e) {
     e.preventDefault();
 
     try {
       const responseData = await sendRequest(
-        'https://joblisting-web.herokuapp.com/api/users/login',
-        'POST',
+        "http://localhost:5000/api/users/login",
+        "POST",
         JSON.stringify({
           email,
           passwordHash,
         }),
         {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         }
       );
-      Swal.fire('Awesome!', "You're successfully interested in!", 'success');
+      Swal.fire('Awesome!', "You're successfully interested in!", 'success')
       auth.login(responseData.user.id);
       auth.authorization(responseData.user.userName);
       auth.authorization(responseData.user.role);
     } catch (err) {
-      setError('Your email or password is not correct.');
+      setError("Your email or password is not correct.");
       setTimeout(() => {
-        setError('');
+        setError("");
       }, 5000);
     }
   }
@@ -91,7 +91,9 @@ const FormLogin = () => {
                           Remember Me
                         </label>
                       </div>
-                      <div>{error && <span className="error-message">{error}</span>}</div>
+                      <div>
+                        {error && <span className="error-message">{error}</span>}
+                      </div>
                       <button type="submit" className="btn btn-login" style={{ height: '1%' }}>
                         Sign In
                       </button>
@@ -99,15 +101,10 @@ const FormLogin = () => {
                   </form>
                   <div style={{ textAlign: 'center', marginTop: '-4%' }}>
                     <div>
-                      <p>
-                        Do not have an account?{' '}
-                        <Link to="/register">
-                          <label style={{ cursor: 'pointer' }}>Click here!</label>
-                        </Link>
-                      </p>
+                      <p>Do not have an account? <Link to="/register"><label style={{ cursor: 'pointer' }}>Click here!</label></Link></p>
                     </div>
                   </div>
-                </div>
+               </div>
               </div>
             </div>
           </div>
@@ -115,6 +112,6 @@ const FormLogin = () => {
       </section>
     </>
   );
-};
+}
 
 export default FormLogin;

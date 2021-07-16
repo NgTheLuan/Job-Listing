@@ -9,9 +9,7 @@ function FavoriteJob() {
   const [loadding, setLoading] = useState(true);
 
   const addToFavorite = async () => {
-    await axios.patch(`https://joblisting-web.herokuapp.com/api/users/addfavoritejob/${auth.userId}`, {
-      favorite: favojob,
-    });
+    await axios.patch(`/api/users/addfavoritejob/${auth.userId}`, { favorite: favojob });
   };
 
   const removeFavoriteJob = (id) => {
@@ -40,7 +38,7 @@ function FavoriteJob() {
   useEffect(() => {
     const getUser = async () => {
       try {
-        const res = await axios.get(`https://joblisting-web.herokuapp.com/api/users/${auth.userId}`);
+        const res = await axios.get(`/api/users/${auth.userId}`);
         setFavoJob(res.data.user.favorite);
 
         setLoading(false);

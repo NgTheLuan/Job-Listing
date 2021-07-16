@@ -14,7 +14,7 @@ const ManageCV = (props) => {
   useEffect(() => {
     const fetchCvs = async () => {
       try {
-        const responseData = await sendRequest(`https://joblisting-web.herokuapp.com/api/cvs/user/${auth.userId}`);
+        const responseData = await sendRequest(`http://localhost:5000/api/cvs/user/${auth.userId}`);
         const data = responseData.cvs;
         setLoadedCvs(data);
         setCallBack(!callback);
@@ -25,7 +25,7 @@ const ManageCV = (props) => {
 
   const onView = async (cv) => {
     try {
-      await sendRequest(`https://joblisting-web.herokuapp.com/api/cvs/${cv}`);
+      await sendRequest(`http://localhost:5000/api/cvs/${cv}`);
     } catch (error) {
       console.log(error);
     }
@@ -33,7 +33,7 @@ const ManageCV = (props) => {
 
   const onUpdate = async (cv) => {
     try {
-      await sendRequest(`https://joblisting-web.herokuapp.com/api/cvs/${cv}`);
+      await sendRequest(`http://localhost:5000/api/cvs/${cv}`);
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +41,7 @@ const ManageCV = (props) => {
 
   const onDelete = async (cv) => {
     try {
-      await axios.delete(`https://joblisting-web.herokuapp.com/api/cvs/${cv}`);
+      await axios.delete(`http://localhost:5000/api/cvs/${cv}`);
       setCallBack(!callback);
     } catch {
       Swal.fire({
@@ -130,7 +130,6 @@ const ManageCV = (props) => {
                                 </a>
                               </Link>
                               <a
-                                style={{ cursor: 'pointer' }}
                                 onClick={() => {
                                   onDelete(cv.id);
                                 }}

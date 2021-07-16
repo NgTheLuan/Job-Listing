@@ -58,9 +58,7 @@ const CvName = (props) => {
       formData.append('file', file);
 
       setLoading(true);
-      const res = await axios.post('https://joblisting-web.herokuapp.com/api/photo/upload', formData, {
-        url: photos.url,
-      });
+      const res = await axios.post('/api/photo/upload', formData, { url: photos.url });
 
       console.log(res.data.url);
       setLoading(false);
@@ -76,7 +74,7 @@ const CvName = (props) => {
 
   const handleDestroy = async () => {
     try {
-      await axios.post('https://joblisting-web.herokuapp.com/api/photo/destroy', { public_id: photos.public_id });
+      await axios.post('/api/photo/destroy', { public_id: photos.public_id });
       Swal.fire({
         icon: 'success',
         title: 'Good job !',

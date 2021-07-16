@@ -7,12 +7,12 @@ const Store = createStore({
   actions: {
     saveUserId:
       (id) =>
-      ({ setState, getState }) => {
-        setState({
-          userId: id,
-        });
-      },
-  },
+        ({ setState, getState }) => {
+          setState({
+            userId: id,
+          });
+        },
+  }
 });
 
 export const useCV = createHook(Store);

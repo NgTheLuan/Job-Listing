@@ -13,7 +13,7 @@ const Navbars = () => {
   // const [favorite] = state1.userAPI.favorite;
 
   const createCV = async () => {
-    const cv = await axios.post(`https://joblisting-web.herokuapp.com/api/cvs/createCV/${auth.userId}`); //create empty CV
+    const cv = await axios.post(`http://localhost:5000/api/cvs/createCV/${auth.userId}`); //create empty CV
     actions.saveCvId(cv.data.cv._id);
   };
 
@@ -100,6 +100,27 @@ const Navbars = () => {
                     <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
                         Manage User
+                      </NavLink>
+                    </div>
+                  </li>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <li className="nav-item dropdown">
+                    <a
+                      className="nav-link dropdown-toggle"
+                      id="navbarDropdown"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      CV
+                    </a>
+                    <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <NavLink className="dropdown-item" to="/create-cv" style={{ color: '#000000' }}>
+                        Create CV
+                      </NavLink>
+                      <NavLink className="dropdown-item" to="/subjectB" style={{ color: '#000000' }}>
+                        Manage CV
                       </NavLink>
                     </div>
                   </li>

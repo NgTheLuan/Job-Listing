@@ -26,9 +26,7 @@ const Educations = (props) => {
   useEffect(() => {
     if (!cvState.educationId) {
       const fetch = async () => {
-        const education = await axios.post(
-          `https://joblisting-web.herokuapp.com/api/cvs/createEducation/${cvState.cvId}`
-        ); //create empty CV
+        const education = await axios.post(`http://localhost:5000/api/cvs/createEducation/${cvState.cvId}`); //create empty CV
         cvActions.saveEducationId(education.data.cv._id);
       };
       fetch();

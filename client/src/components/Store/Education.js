@@ -7,14 +7,12 @@ const Store = createStore({
   },
 
   actions: {
-    stepEducation:
-      (data) =>
-      async ({ setState, getState }) => {
-        setState({
-          education: data.education,
-        });
-        await axios.patch(`https://joblisting-web.herokuapp.com/api/cvs/updateEducation/${data.educationId}`, data);
-      },
+    stepEducation: (data) => async ({ setState, getState }) => {
+      setState({
+        education: data.education,
+      })
+      await axios.patch(`http://localhost:5000/api/cvs/updateEducation/${data.educationId}`, data);
+    },
   },
 });
 

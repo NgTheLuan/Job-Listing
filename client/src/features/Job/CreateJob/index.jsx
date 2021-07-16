@@ -1,7 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { GlobalState } from '../../../GlobalState';
 import Loading from '../../../features/LoadingImg';
+import HTMLReactParser from 'html-react-parser';
 import Moment from 'react-moment';
 import Swal from 'sweetalert2';
 import axios from 'axios';
@@ -9,6 +12,7 @@ import './styles.css';
 
 function CreateJob() {
   const [job, setJob] = useState({
+    // jobId: '',
     startDay: '',
     endDay: '',
     position: '',
@@ -97,9 +101,7 @@ function CreateJob() {
       formData.append('file', file);
 
       setLoading(true);
-      const res = await axios.post('https://joblisting-web.herokuapp.com/api/photo/upload', formData, {
-        url: photos.url,
-      });
+      const res = await axios.post('/api/photo/upload', formData, { url: photos.url });
 
       console.log(res.data.url);
       setLoading(false);
@@ -115,7 +117,7 @@ function CreateJob() {
 
   const handleDestroy = async () => {
     try {
-      await axios.post('https://joblisting-web.herokuapp.com/api/photo/destroy', { public_id: photos.public_id });
+      await axios.post('/api/photo/destroy', { public_id: photos.public_id });
       Swal.fire({
         icon: 'success',
         title: 'Good job !',
@@ -141,11 +143,11 @@ function CreateJob() {
         });
 
       if (onEdit) {
-        await axios.put(`https://joblisting-web.herokuapp.com/api/jobs/${job._id}`, { ...job }).then((res) => {
+        await axios.put(`/api/jobs/${job._id}`, { ...job }).then((res) => {
           // console.log(res.data);
         });
       } else {
-        await axios.post('https://joblisting-web.herokuapp.com/api/jobs', { ...job }).then((res) => {
+        await axios.post('/api/jobs', { ...job }).then((res) => {
           // console.log(res.data);
         });
       }
@@ -169,6 +171,7 @@ function CreateJob() {
   const clear = () => {
     setPhotos(false);
     setJob({
+      // jobId: '',
       startDay: '',
       endDay: '',
       position: '',
@@ -269,8 +272,9 @@ function CreateJob() {
                     <input
                       type="text"
                       class="form-control"
-                      value={job.position}
+                      placeholder="Please input your position"
                       required
+                      value={job.position}
                       onChange={(e) => setJob({ ...job, position: e.target.value })}
                     />
                   </div>
@@ -536,15 +540,16 @@ function CreateJob() {
 
               <div class="col-md-12 col-sm-12">
                 <label>Other Information</label>
-                <textarea
-                  rows="8"
-                  required
-                  placeholder=""
-                  type="text"
-                  class="form-control"
-                  value={job.otherInfo}
-                  onChange={(e) => setJob({ ...job, otherInfo: e.target.value })}
-                ></textarea>
+                {HTMLReactParser(job.otherInfo)}
+                <hr />
+                <CKEditor
+                  id="otherinfo"
+                  editor={ClassicEditor}
+                  onChange={(event, editor) => {
+                    const data = editor.getData();
+                    setJob({ ...job, otherInfo: data });
+                  }}
+                />
               </div>
             </div>
 

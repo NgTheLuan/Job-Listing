@@ -18,7 +18,7 @@ function CrudCategory() {
     e.preventDefault();
     try {
       if (onEdit) {
-        await axios.put(`https://joblisting-web.herokuapp.com/api/categories/${id}`, {
+        await axios.put(`/api/categories/${id}`, {
           career: { careerName: category, icon: cateicon, total: catetotal },
         });
         Swal.fire('Awesome!', "You're successfully updated!", 'success').then((result) => {
@@ -26,7 +26,7 @@ function CrudCategory() {
           }
         });
       } else {
-        await axios.post('https://joblisting-web.herokuapp.com/api/categories', {
+        await axios.post('/api/categories', {
           career: { careerName: category, icon: cateicon, total: catetotal },
         });
         Swal.fire('Awesome!', "You're successfully created!", 'success').then((result) => {
@@ -59,7 +59,7 @@ function CrudCategory() {
 
   const deleteCategory = async (id) => {
     try {
-      await axios.delete(`https://joblisting-web.herokuapp.com/api/categories/${id}`);
+      await axios.delete(`api/categories/${id}`);
       Swal.fire('Awesome!', "You're successfully deleted!", 'success').then((result) => {
         if (result.isConfirmed || result.isDismissed) {
         }

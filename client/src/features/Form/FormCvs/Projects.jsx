@@ -11,7 +11,7 @@ const Projects = (props) => {
   const [formState, formActions] = useProject();
   const [project, setProject] = useState({
     project: '',
-  });
+  })
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,19 +22,19 @@ const Projects = (props) => {
     };
     await formActions.stepProject(data);
     props.history.push('/createcv-experience');
-  };
+  }
 
   useEffect(() => {
     if (!cvState.projectId) {
       const fetch = async () => {
-        const project = await axios.post(`https://joblisting-web.herokuapp.com/api/cvs/createProject/${cvState.cvId}`); //create empty CV
+        const project = await axios.post(`http://localhost:5000/api/cvs/createProject/${cvState.cvId}`); //create empty CV
         cvActions.saveProjectId(project.data.cv._id);
-      };
+      }
       fetch();
     } else {
       return () => handleSubmit;
     }
-  }, [cvState.cvId]);
+  }, [cvState.cvId])
 
   const previous = () => {
     props.history.push('/createcv-education');

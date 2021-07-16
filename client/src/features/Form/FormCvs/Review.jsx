@@ -7,7 +7,7 @@ import { useExperience } from '../../../components/Store/Experience';
 import { useExtra } from '../../../components/Store/Extra';
 import { useHistory } from 'react-router';
 import HTMLReactParser from 'html-react-parser';
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const Review = (props) => {
   const [cvState] = useCV();
@@ -19,8 +19,8 @@ const Review = (props) => {
   const history = useHistory();
 
   const finish = () => {
-    history.push('/managecv');
-    Swal.fire('Awesome!', "You're successfully created cv!", 'success');
+    history.push('/managecv')
+    Swal.fire('Awesome!', "You're successfully created cv!", 'success')
   };
 
   const previous = () => {
@@ -42,6 +42,7 @@ const Review = (props) => {
               <label>Bio</label>
               <p>{cvState.bio}</p>
             </div>
+
           </div>
 
           <div class="row bottom-mrg extra-mrg">

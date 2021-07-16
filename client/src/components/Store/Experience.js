@@ -7,14 +7,12 @@ const Store = createStore({
   },
 
   actions: {
-    stepExperience:
-      (data) =>
-      async ({ setState, getState }) => {
-        setState({
-          expDescription: data.expDescription,
-        });
-        await axios.patch(`https://joblisting-web.herokuapp.com/api/cvs/updateExperience/${data.experienceId}`, data);
-      },
+    stepExperience: (data) => async ({ setState, getState }) => {
+      setState({
+        expDescription: data.expDescription,
+      })
+      await axios.patch(`http://localhost:5000/api/cvs/updateExperience/${data.experienceId}`, data);
+    },
   },
 });
 

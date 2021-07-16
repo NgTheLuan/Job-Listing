@@ -7,7 +7,7 @@ function CategoriesAPI() {
 
   useEffect(() => {
     const getCategories = async () => {
-      const res = await axios.get('https://joblisting-web.herokuapp.com/api/categories');
+      const res = await axios.get('/api/categories');
       setCategories(res.data);
     };
 

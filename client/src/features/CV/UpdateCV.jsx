@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
-import { useHttpClient } from '../../components/Hooks/Http-hook';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { useFormik } from 'formik';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { useHttpClient } from "../../components/Hooks/Http-hook";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useFormik } from "formik";
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 const UpdateCV = (props) => {
   const { sendRequest } = useHttpClient();
@@ -17,10 +17,12 @@ const UpdateCV = (props) => {
   useEffect(() => {
     const fetchDetails = async () => {
       try {
-        const responseData = await sendRequest(`https://joblisting-web.herokuapp.com/api/cvs/${cvId}`);
+        const responseData = await sendRequest(
+          `http://localhost:5000/api/cvs/${cvId}`
+        );
         setLoadedCvs(responseData.cv);
         setCallBack(!callback);
-      } catch (error) {}
+      } catch (error) { }
     };
     fetchDetails();
   }, [sendRequest, cvId, callback]);
@@ -38,8 +40,8 @@ const UpdateCV = (props) => {
         position: values.position,
         bio: values.bio,
       };
-      await axios.patch(`https://joblisting-web.herokuapp.com/api/cvs/updateCv/${cvId}`, data);
-      Swal.fire('Awesome!', "You're successfully updated!", 'success');
+      await axios.patch(`http://localhost:5000/api/cvs/updateCv/${cvId}`, data)
+      Swal.fire('Awesome!', "You're successfully updated!", 'success')
     },
   });
 
@@ -62,69 +64,63 @@ const UpdateCV = (props) => {
         dob: values.dob,
         address: values.address,
       };
-      await axios.patch(`https://joblisting-web.herokuapp.com/api/cvs/updateProfile/${loadedCvs.profile[0]._id}`, data);
-      Swal.fire('Awesome!', "You're successfully updated!", 'success');
+      await axios.patch(`http://localhost:5000/api/cvs/updateProfile/${loadedCvs.profile[0]._id}`, data)
+      Swal.fire('Awesome!', "You're successfully updated!", 'success')
       setCallBack(!callback);
     },
   });
 
   const [edu, setEdu] = useState({
     education: '',
-  });
+  })
 
   const updateEdu = async (e) => {
     e.preventDefault();
     const data = {
       education: edu.education,
     };
-    await axios.patch(
-      `https://joblisting-web.herokuapp.com/api/cvs/updateEducation/${loadedCvs.education[0]._id}`,
-      data
-    );
-    Swal.fire('Awesome!', "You're successfully updated!", 'success');
-  };
+    await axios.patch(`http://localhost:5000/api/cvs/updateEducation/${loadedCvs.education[0]._id}`, data)
+    Swal.fire('Awesome!', "You're successfully updated!", 'success')
+  }
 
   const [project, setProject] = useState({
     project: '',
-  });
+  })
 
   const updateProject = async (e) => {
     e.preventDefault();
     const data = {
       project: project.project,
     };
-    await axios.patch(`https://joblisting-web.herokuapp.com/api/cvs/updateProject/${loadedCvs.project[0]._id}`, data);
-    Swal.fire('Awesome!', "You're successfully updated!", 'success');
-  };
+    await axios.patch(`http://localhost:5000/api/cvs/updateProject/${loadedCvs.project[0]._id}`, data)
+    Swal.fire('Awesome!', "You're successfully updated!", 'success')
+  }
 
   const [exp, setExp] = useState({
     expDescription: '',
-  });
+  })
 
   const updateExp = async (e) => {
     e.preventDefault();
     const data = {
       expDescription: exp.expDescription,
     };
-    await axios.patch(
-      `https://joblisting-web.herokuapp.com/api/cvs/updateExperience/${loadedCvs.experience[0]._id}`,
-      data
-    );
-    Swal.fire('Awesome!', "You're successfully updated!", 'success');
-  };
+    await axios.patch(`http://localhost:5000/api/cvs/updateExperience/${loadedCvs.experience[0]._id}`, data)
+    Swal.fire('Awesome!', "You're successfully updated!", 'success')
+  }
 
   const [extra, setExtra] = useState({
     addInfor: '',
-  });
+  })
 
   const updateExtra = async (e) => {
     e.preventDefault();
     const data = {
       addInfor: extra.addInfor,
     };
-    await axios.patch(`https://joblisting-web.herokuapp.com/api/cvs/updateExtra/${loadedCvs.extra[0]._id}`, data);
-    Swal.fire('Awesome!', "You're successfully updated!", 'success');
-  };
+    await axios.patch(`http://localhost:5000/api/cvs/updateExtra/${loadedCvs.extra[0]._id}`, data)
+    Swal.fire('Awesome!', "You're successfully updated!", 'success')
+  }
 
   return (
     <>
@@ -135,28 +131,13 @@ const UpdateCV = (props) => {
               <div class="col-md-8">
                 <div class="left-side-container">
                   <div class="header-details">
-                    <h4>
-                      {loadedCvs.profile[0].lastname} {loadedCvs.profile[0].firstname}
-                    </h4>
+                    <h4>{loadedCvs.profile[0].lastname} {loadedCvs.profile[0].firstname}</h4>
                     <p>{loadedCvs.position}</p>
                     <ul>
-                      <li>
-                        <span class="detail-info">Date of Birth: </span>
-                        {loadedCvs.profile[0].dob}
-                      </li>
-                      <li>
-                        <span class="detail-info">Email: </span>
-                        {loadedCvs.profile[0].email}
-                      </li>
-                      <li>
-                        <span class="detail-info">Phone number: </span>
-                        {loadedCvs.profile[0].phone}
-                      </li>
-                      <br />
-                      <li>
-                        <span class="detail-info">Address: </span>
-                        {loadedCvs.profile[0].address}
-                      </li>
+                      <li><span class="detail-info">Date of Birth: </span>{loadedCvs.profile[0].dob}</li>
+                      <li><span class="detail-info">Email: </span>{loadedCvs.profile[0].email}</li>
+                      <li><span class="detail-info">Phone number: </span>{loadedCvs.profile[0].phone}</li><br />
+                      <li><span class="detail-info">Address: </span>{loadedCvs.profile[0].address}</li>
                     </ul>
                     <ul class="detail-footer-social">
                       <li>
@@ -202,6 +183,13 @@ const UpdateCV = (props) => {
             <div class="container">
               <div class="row bottom-mrg extra-mrg">
                 <h2 class="detail-title">Overview</h2>
+                <div class="col-md-12 col-sm-12">
+                  <div class="input-group">
+                    <label>Position: <p>{loadedCvs.position}</p></label><br />
+                    <label>Bio: <p>{loadedCvs.bio}</p></label>
+                  </div>
+                </div>
+                <hr />
                 <form onSubmit={cvState.handleSubmit}>
                   <div class="col-md-12 col-sm-12">
                     <div class="input-group">
@@ -260,6 +248,33 @@ const UpdateCV = (props) => {
 
               <div class="row bottom-mrg extra-mrg">
                 <h2 class="detail-title">Personal Details</h2>
+                <div class="col-md-4 col-sm-12">
+                  <label>Firstname: <a>{loadedCvs.profile[0].firstname}</a></label>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <label>Lastname: <a>{loadedCvs.profile[0].lastname}</a></label>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <div class="input-group">
+                    <label>Birthday: <a>{loadedCvs.profile[0].dob}</a></label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-group">
+                    <label>Email: <a>{loadedCvs.profile[0].email}</a></label>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="input-group">
+                    <label>Phone: <a>{loadedCvs.profile[0].phone}</a></label>
+                  </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                  <div class="input-group">
+                    <label>Address: <a>{loadedCvs.profile[0].address}</a></label>
+                  </div>
+                </div>
+                <hr />
                 <form onSubmit={profileState.handleSubmit}>
                   <div class="col-md-4 col-sm-12">
                     <div class="input-group">
@@ -272,7 +287,6 @@ const UpdateCV = (props) => {
                         data={loadedCvs.profile[0].firstname}
                         defaultValue={profileState.firstname}
                         onChange={profileState.handleChange}
-                        placeholder={loadedCvs.profile[0].firstname}
                       />
                     </div>
                   </div>
@@ -387,7 +401,7 @@ const UpdateCV = (props) => {
                       data={loadedCvs.education[0].education}
                       editor={ClassicEditor}
                       onChange={(event, editor) => {
-                        const data = editor.getData();
+                        const data = editor.getData();                        
                         setEdu({ ...edu, education: data });
                       }}
                     />
@@ -411,7 +425,7 @@ const UpdateCV = (props) => {
                           }}
                         >
                           Update Education
-                        </button>
+                      </button>
                       </div>
                     </div>
                   </div>
@@ -452,7 +466,7 @@ const UpdateCV = (props) => {
                           }}
                         >
                           Update Project
-                        </button>
+                      </button>
                       </div>
                     </div>
                   </div>
@@ -492,7 +506,7 @@ const UpdateCV = (props) => {
                           }}
                         >
                           Update Experience
-                        </button>
+                      </button>
                       </div>
                     </div>
                   </div>
@@ -532,7 +546,7 @@ const UpdateCV = (props) => {
                           }}
                         >
                           Update Extras
-                        </button>
+                      </button>
                       </div>
                     </div>
                   </div>
@@ -540,8 +554,10 @@ const UpdateCV = (props) => {
               </div>
 
               <div class="col-md-12 col-sm-12">
-                <Link to="https://joblisting-web.herokuapp.com/managecv">
-                  <a class="btn btn-success btn-primary small-btn">Finish</a>
+                <Link to='/managecv'>
+                  <a class="btn btn-success btn-primary small-btn">
+                    Finish
+                  </a>
                 </Link>
               </div>
             </div>
