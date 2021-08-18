@@ -1,4 +1,4 @@
-# **MERN Stack - JobListing 🦉 **
+# ** MERN Stack - JobListing 🦉 **
 
 ### 🪐 Demo
 
