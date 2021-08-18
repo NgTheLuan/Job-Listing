@@ -34,4 +34,4 @@ The Recruitment Site With The Best Jobs Gives Employees Many Choices.
 
 ### 📌 Contact me
 
-![Click here](https://linktr.ee/NgTheLuan)
+> https://linktr.ee/NgTheLuan
