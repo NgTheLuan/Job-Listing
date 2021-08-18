@@ -8,8 +8,6 @@
 
 The Recruitment Site With The Best Jobs Gives Employees Many Choices.
 
-![https://res.cloudinary.com/ngtheluan/image/upload/v1624765808/Job-Listing/Browser-job_k34pa0.png](https://res.cloudinary.com/ngtheluan/image/upload/v1624765808/Job-Listing/Browser-job_k34pa0.png)
-
 ### ✨ Features
 
 - Login and register in the system
@@ -32,6 +30,8 @@ The Recruitment Site With The Best Jobs Gives Employees Many Choices.
 - Heroku
 - Other library
 
+![https://res.cloudinary.com/ngtheluan/image/upload/v1624765808/Job-Listing/Browser-job_k34pa0.png](https://res.cloudinary.com/ngtheluan/image/upload/v1624765808/Job-Listing/Browser-job_k34pa0.png)
+
 ### 📌 Contact me
 
-[text](https://linktr.ee/NgTheLuan)
+![Click here](https://linktr.ee/NgTheLuan)
