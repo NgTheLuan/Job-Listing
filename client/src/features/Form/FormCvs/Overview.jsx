@@ -26,7 +26,7 @@ const CvName = (props) => {
         cvId: cvState.cvId,
       };
       await cvActions.updateCvName(data);
-      props.history.push('/createcv-profile');
+      props.navigate.push('/createcv-profile');
     },
   });
 
@@ -103,11 +103,11 @@ const CvName = (props) => {
       <br />
       <br />
       <form onSubmit={formik.handleSubmit}>
-        <div class="detail-desc section">
-          <div class="container white-shadow">
-            <div class="row">
-              <div class="detail-pic js">
-                <div class="box">
+        <div className="detail-desc section">
+          <div className="container white-shadow">
+            <div className="row">
+              <div className="detail-pic js">
+                <div className="box">
                   <input
                     type="file"
                     name="upload-pic[]"
@@ -122,11 +122,12 @@ const CvName = (props) => {
                   ) : (
                     <>
                       <label htmlFor="upload-pic">
-                        <i class="fa fa-upload" aria-hidden="true" style={{ cursor: 'pointer', fontSize: '20px' }}></i>
+                        <i className="fa fa-upload" aria-hidden="true" style={{ cursor: 'pointer', fontSize: '20px' }}></i>
                       </label>
 
                       <div style={styleUpload}>
                         <img
+                        alt='cv image1'
                           src={photos ? photos.url : ''}
                           srcSet={formik.cvImage}
                           style={{
@@ -146,14 +147,14 @@ const CvName = (props) => {
               </div>
             </div>
 
-            <div class="add-feild">
-              <div class="row bottom-mrg">
-                <div class="col-md-6 col-sm-6">
-                  <div class="input-group">
+            <div className="add-feild">
+              <div className="row bottom-mrg">
+                <div className="col-md-6 col-sm-6">
+                  <div className="input-group">
                     <label>CV Name</label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       required
                       placeholder="Example: CV1."
                       name="cvName"
@@ -163,12 +164,12 @@ const CvName = (props) => {
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-6 col-sm-6">
+                  <div className="input-group">
                     <label>Position</label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       required
                       placeholder="Example: App Developer."
                       name="position"
@@ -178,12 +179,12 @@ const CvName = (props) => {
                   </div>
                 </div>
 
-                <div class="col-md-12 col-sm-12">
-                  <div class="input-group">
+                <div className="col-md-12 col-sm-12">
+                  <div className="input-group">
                     <label>Bio</label>
                     <textarea
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Describe yourself."
                       required
                       name="bio"
@@ -193,13 +194,13 @@ const CvName = (props) => {
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-6 col-sm-6">
+                  <div className="input-group">
                     <input
                       type="file"
                       name="upload-pic[]"
                       id="upload-pic"
-                      class="form-control input-lg"
+                      className="form-control input-lg"
                       style={{
                         padding: '15px ',
                         textAlign: 'center',
@@ -212,11 +213,11 @@ const CvName = (props) => {
                   </div>
                 </div>
 
-                <div class="col-md-6 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-6 col-sm-6">
+                  <div className="input-group">
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Paste your link file upload here."
                       required
                       name="cvImage"
@@ -226,11 +227,11 @@ const CvName = (props) => {
                   </div>
                 </div>
 
-                <div class="detail pannel-footer">
-                  <div class="col-md-12 col-sm-12">
-                    <div class="detail-pannel-footer-btn pull-right">
+                <div className="detail pannel-footer">
+                  <div className="col-md-12 col-sm-12">
+                    <div className="detail-pannel-footer-btn pull-right">
                       <button
-                        class="footer-btn choose-cover"
+                        className="footer-btn choose-cover"
                         onClick={handleDestroy}
                         style={{
                           backgroundColor: '#3DB810',
@@ -247,7 +248,7 @@ const CvName = (props) => {
                       </button>
                       &nbsp;&nbsp;&nbsp;
                       <button
-                        class="footer-btn choose-cover"
+                        className="footer-btn choose-cover"
                         type="submit"
                         style={{
                           backgroundColor: '#3DB810',

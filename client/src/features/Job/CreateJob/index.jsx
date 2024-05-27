@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import { GlobalState } from '../../../GlobalState';
@@ -51,7 +51,7 @@ function CreateJob() {
   const [jobs] = state.jobAPI.jobs;
   const [photos, setPhotos] = useState(false);
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
   const param = useParams();
   const [onEdit, setOnEdit] = useState(false);
   const [callback, setCallBack] = state.jobAPI.callback;
@@ -152,7 +152,7 @@ function CreateJob() {
         });
       }
       setCallBack(!callback);
-      history.push('/');
+      navigate.push('/');
       Swal.fire('Awesome!', 'Job created and wait for admin to approve the post... 🎉🎉', 'success').then((result) => {
         if (result.isConfirmed || result.isDismissed) {
         }
@@ -210,22 +210,22 @@ function CreateJob() {
   return (
     <>
       <section
-        class="inner-header-title blank"
+        className="inner-header-title blank"
         style={{
           backgroundImage: `URL("https://www.mediafire.com/convkey/94a5/ld2xj8f54j7colg6g.jpg")`,
         }}
       >
-        <div class="container">
+        <div className="container">
           <h1>Create Job</h1>
         </div>
       </section>
 
       <form onSubmit={handleSubmit}>
-        <div class="detail-desc section">
-          <div class="container white-shadow">
-            <div class="row">
-              <div class="detail-pic js">
-                <div class="box">
+        <div className="detail-desc section">
+          <div className="container white-shadow">
+            <div className="row">
+              <div className="detail-pic js">
+                <div className="box">
                   <input
                     type="file"
                     name="upload-pic[]"
@@ -240,11 +240,12 @@ function CreateJob() {
                   ) : (
                     <>
                       <label htmlFor="upload-pic">
-                        <i class="fa fa-upload" aria-hidden="true" style={{ cursor: 'pointer', fontSize: '20px' }}></i>
+                        <i className="fa fa-upload" aria-hidden="true" style={{ cursor: 'pointer', fontSize: '20px' }}></i>
                       </label>
 
                       <div style={styleUpload}>
                         <img
+                        alt='job Img'
                           src={photos ? photos.url : ''}
                           srcSet={job.imgCom}
                           style={{
@@ -264,14 +265,14 @@ function CreateJob() {
               </div>
             </div>
 
-            <div class="add-feild">
-              <div class="row bottom-mrg">
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+            <div className="add-feild">
+              <div className="row bottom-mrg">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>Position</label>
                     <input
                       type="text"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Please input your position"
                       required
                       value={job.position}
@@ -280,14 +281,14 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>Start Day</label>&nbsp;&nbsp;
                     <Moment format="DD-MM-YYYY">{job.startDay}</Moment>
                     <input
                       id="startDay"
                       type="date"
-                      class="form-control"
+                      className="form-control"
                       placeholder=""
                       required
                       value={job.startDay}
@@ -296,14 +297,14 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>End Day</label>&nbsp;&nbsp;
                     <Moment format="DD-MM-YYYY">{job.endDay}</Moment>
                     <input
                       id="endDay"
                       type="date"
-                      class="form-control"
+                      className="form-control"
                       placeholder=""
                       required
                       value={job.endDay}
@@ -312,11 +313,11 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>Category</label>
                     <select
-                      class="form-control input-lg"
+                      className="form-control input-lg"
                       required
                       value={job.category}
                       onChange={(e) => setJob({ ...job, category: e.target.value })}
@@ -331,12 +332,12 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>Salary From</label>
                     <input
                       type="number"
-                      class="form-control"
+                      className="form-control"
                       min="0"
                       placeholder="Currency unit: $"
                       required
@@ -351,12 +352,12 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>Salary To</label>
                     <input
                       type="number"
-                      class="form-control"
+                      className="form-control"
                       min="0"
                       placeholder="Currency unit: $"
                       required
@@ -371,11 +372,11 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div className="col-md-4 col-sm-6">
                   <label>Working Time</label>
-                  <div class="input-group">
+                  <div className="input-group">
                     <select
-                      class="form-control input-lg"
+                      className="form-control input-lg"
                       required
                       value={job.workingTime}
                       onChange={(e) => setJob({ ...job, workingTime: e.target.value })}
@@ -389,12 +390,12 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>Url Company</label>
                     <input
                       type="url"
-                      class="form-control"
+                      className="form-control"
                       placeholder="Please input a URL image company"
                       required
                       value={job.imgCom}
@@ -403,14 +404,14 @@ function CreateJob() {
                   </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
-                  <div class="input-group">
+                <div className="col-md-4 col-sm-6">
+                  <div className="input-group">
                     <label>Upload File</label>
                     <input
                       type="file"
                       name="upload-pic[]"
                       id="upload-pic"
-                      class="form-control input-lg"
+                      className="form-control input-lg"
                       style={{
                         // backgroundColor: '#3DB810',
                         // border: 'none',
@@ -428,12 +429,12 @@ function CreateJob() {
               </div>
             </div>
 
-            <div class="row no-padd">
-              <div class="detail pannel-footer">
-                <div class="col-md-12 col-sm-12">
-                  <div class="detail-pannel-footer-btn pull-right">
+            <div className="row no-padd">
+              <div className="detail pannel-footer">
+                <div className="col-md-12 col-sm-12">
+                  <div className="detail-pannel-footer-btn pull-right">
                     <button
-                      class="footer-btn choose-cover"
+                      className="footer-btn choose-cover"
                       onClick={handleDestroy}
                       style={{
                         backgroundColor: '#3DB810',
@@ -455,17 +456,17 @@ function CreateJob() {
           </div>
         </div>
 
-        <section class="full-detail">
-          <div class="container">
-            <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">
+        <section className="full-detail">
+          <div className="container">
+            <div className="row bottom-mrg extra-mrg">
+              <h2 className="detail-title">
                 <b>Job Information</b>
               </h2>
-              <div class="col-md-6 col-sm-12">
+              <div className="col-md-6 col-sm-12">
                 <label>Detail</label>
                 <textarea
                   rows="6"
-                  class="form-control"
+                  className="form-control"
                   placeholder="Keep the content short and easy to understand..."
                   required
                   value={job.detail}
@@ -473,11 +474,11 @@ function CreateJob() {
                 ></textarea>
               </div>
 
-              <div class="col-md-6 col-sm-12">
+              <div className="col-md-6 col-sm-12">
                 <label>Requirement</label>
                 <textarea
                   rows="6"
-                  class="form-control textarea"
+                  className="form-control textarea"
                   placeholder="Requirement"
                   required
                   value={job.requirement}
@@ -485,11 +486,11 @@ function CreateJob() {
                 ></textarea>
               </div>
 
-              <div class="col-md-6 col-sm-12">
+              <div className="col-md-6 col-sm-12">
                 <label>Benefit</label>
                 <textarea
                   rows="6"
-                  class="form-control textarea"
+                  className="form-control textarea"
                   placeholder="About Company"
                   required
                   value={job.benefit}
@@ -497,11 +498,11 @@ function CreateJob() {
                 ></textarea>
               </div>
 
-              <div class="col-md-6 col-sm-12">
+              <div className="col-md-6 col-sm-12">
                 <label>Certification</label>
                 <textarea
                   rows="6"
-                  class="form-control textarea"
+                  className="form-control textarea"
                   placeholder="Certification"
                   required
                   value={job.certification}
@@ -509,10 +510,10 @@ function CreateJob() {
                 ></textarea>
               </div>
 
-              <div class="col-md-6 col-sm-12">
+              <div className="col-md-6 col-sm-12">
                 <label>Experience</label>
                 <select
-                  class="form-control input-lg"
+                  className="form-control input-lg"
                   required
                   value={job.experience}
                   onChange={(e) => setJob({ ...job, experience: e.target.value })}
@@ -525,20 +526,20 @@ function CreateJob() {
                   <option value="More than 3 years">More than 3 years</option>
                 </select>
               </div>
-              <div class="col-md-6 col-sm-12">
+              <div className="col-md-6 col-sm-12">
                 <label>Number of Recruit</label>
                 <input
                   placeholder="Number of recruit"
                   type="number"
                   min="0"
-                  class="form-control"
+                  className="form-control"
                   required
                   value={job.numofRecruit}
                   onChange={(e) => setJob({ ...job, numofRecruit: e.target.value })}
                 />
               </div>
 
-              <div class="col-md-12 col-sm-12">
+              <div className="col-md-12 col-sm-12">
                 <label>Other Information</label>
                 {HTMLReactParser(job.otherInfo)}
                 <hr />
@@ -553,19 +554,19 @@ function CreateJob() {
               </div>
             </div>
 
-            <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">
+            <div className="row bottom-mrg extra-mrg">
+              <h2 className="detail-title">
                 <b>Company Information</b>
               </h2>
 
-              <div class="col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fa fa-flag"></i>
+              <div className="col-md-4 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fa fa-flag"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Company Name"
                     required
                     value={job.nameCom}
@@ -574,14 +575,14 @@ function CreateJob() {
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fa fa-globe"></i>
+              <div className="col-md-4 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fa fa-globe"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Company Site"
                     required
                     value={job.siteCom}
@@ -590,14 +591,14 @@ function CreateJob() {
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fas fa-image"></i>
+              <div className="col-md-4 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fas fa-image"></i>
                   </span>
                   <input
                     type="url"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Company Thumnail"
                     required
                     value={job.thumbnail}
@@ -606,14 +607,14 @@ function CreateJob() {
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fas fa-road"></i>
+              <div className="col-md-4 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fas fa-road"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Street"
                     required
                     value={job.location.street}
@@ -627,14 +628,14 @@ function CreateJob() {
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fas fa-street-view"></i>
+              <div className="col-md-4 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fas fa-street-view"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="District"
                     required
                     value={job.location.district}
@@ -648,13 +649,13 @@ function CreateJob() {
                 </div>
               </div>
 
-              <div class="col-md-4 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fas fa-building"></i>
+              <div className="col-md-4 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fas fa-building"></i>
                   </span>
                   <select
-                    class="form-control input-lg"
+                    className="form-control input-lg"
                     required
                     value={job.location.city}
                     onChange={(e) =>
@@ -672,18 +673,18 @@ function CreateJob() {
               </div>
             </div>
 
-            <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">
+            <div className="row bottom-mrg extra-mrg">
+              <h2 className="detail-title">
                 <b>Contact Information</b>
               </h2>
-              <div class="col-md-6 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fa fa-facebook"></i>
+              <div className="col-md-6 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fa fa-facebook"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Contact Name"
                     required
                     value={job.contact.contactName}
@@ -697,14 +698,14 @@ function CreateJob() {
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fas fa-envelope"></i>
+              <div className="col-md-6 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fas fa-envelope"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Contact Email"
                     required
                     value={job.contact.contactEmail}
@@ -718,14 +719,14 @@ function CreateJob() {
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fas fa-map-marker-alt"></i>
+              <div className="col-md-6 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fas fa-map-marker-alt"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Contact Address"
                     required
                     value={job.contact.contactAddress}
@@ -738,14 +739,14 @@ function CreateJob() {
                   />
                 </div>
               </div>
-              <div class="col-md-6 col-sm-6">
-                <div class="input-group">
-                  <span class="input-group-addon">
-                    <i class="fas fa-phone-alt"></i>
+              <div className="col-md-6 col-sm-6">
+                <div className="input-group">
+                  <span className="input-group-addon">
+                    <i className="fas fa-phone-alt"></i>
                   </span>
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Contact Phone"
                     required
                     value={job.contact.contactPhone}
@@ -760,8 +761,8 @@ function CreateJob() {
               </div>
             </div>
           </div>
-          <div class="col-md-12 col-sm-12">
-            <button class="btn btn-success btn-primary small-btn">
+          <div className="col-md-12 col-sm-12">
+            <button className="btn btn-success btn-primary small-btn">
               {onEdit ? 'Update Available Jobs' : 'Create a new Job'}
             </button>
           </div>

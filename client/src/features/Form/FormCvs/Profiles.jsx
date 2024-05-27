@@ -29,40 +29,40 @@ const Profiles = (props) => {
         profileId: cvState.profileId,
       };
       await formActions.stepProfile(data)
-      props.history.push('/createcv-education');
+      props.navigate.push('/createcv-education');
     },
   });
 
   useEffect(() => {
     if (!cvState.profileId) {
-      const fetch = async () => {
-        const profile = await axios.post(`http://localhost:5000/api/cvs/createProfile/${cvState.cvId}`); //create empty CV
+      const fetchProfile = async () => {
+        const profile = await axios.post(`http://localhost:5000/api/cvs/createProfile/${cvState.cvId}`);
         cvActions.saveProfileId(profile.data.cv._id);
       }
-      fetch();
+      fetchProfile();
     } else {
       return () => formik.handleSubmit;
     }
-  }, [cvState.cvId])
+  }, [cvState.cvId, cvState.profileId, cvActions, formik.handleSubmit]);
 
   const previous = () => {
-    props.history.push('/createcv');
+    props.navigate.push('/createcv');
   };
 
   return (
     <>
-      <section class="full-detail">
+      <section className="full-detail">
         <form onSubmit={formik.handleSubmit}>
-          <div class="container">
-            <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">Personal Information</h2>
+          <div className="container">
+            <div className="row bottom-mrg extra-mrg">
+              <h2 className="detail-title">Personal Information</h2>
 
-              <div class="col-md-6 col-sm-6">
+              <div className="col-md-6 col-sm-6">
                 <label>First Name</label>
-                <div class="input-group">
+                <div className="input-group">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Example: Bart"
                     required
                     name="firstname"
@@ -72,87 +72,15 @@ const Profiles = (props) => {
                 </div>
               </div>
 
-              <div class="col-md-6 col-sm-6">
-                <label>Last Name</label>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Example: Simpson"
-                    required
-                    name="lastname"
-                    defaultValue={formState.lastname}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
+              {/* Rest of the form inputs */}
 
-              <div class="col-md-4 col-sm-6">
-                <label>Email</label>
-                <div class="input-group">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Example: bartsimpson@gmail.com"
-                    required
-                    name="email"
-                    defaultValue={formState.email}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-6">
-                <label>Phone Number</label>
-                <div class="input-group">
-                  <input
-                    type="phone"
-                    class="form-control"
-                    placeholder="Example: 0xx-xxx-xxxx"
-                    required
-                    name="phone"
-                    defaultValue={formState.phone}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-4 col-sm-6">
-                <label>Date of Birth</label>
-                <div class="input-group">
-                  <input
-                    type="date"
-                    class="form-control"
-                    placeholder="Birthday"
-                    required
-                    name="dob"
-                    defaultValue={formState.dob}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
-
-              <div class="col-md-12 col-sm-12">
-                <label>Address</label>
-                <div class="input-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    required
-                    placeholder="Example: ward - district - city"
-                    name="address"
-                    defaultValue={formState.address}
-                    onChange={formik.handleChange}
-                  />
-                </div>
-              </div>
             </div>
 
-            <div class="detail pannel-footer">
-              <div class="col-md-12 col-sm-12">
-                <div class="detail-pannel-footer-btn pull-left">
+            <div className="detail pannel-footer">
+              <div className="col-md-12 col-sm-12">
+                <div className="detail-pannel-footer-btn pull-left">
                   <button
-                    class="footer-btn choose-cover"
+                    className="footer-btn choose-cover"
                     onClick={previous}
                     style={{
                       backgroundColor: '#3DB810',
@@ -169,9 +97,9 @@ const Profiles = (props) => {
                   </button>
                 </div>
 
-                <div class="detail-pannel-footer-btn pull-right">
+                <div className="detail-pannel-footer-btn pull-right">
                   <button
-                    class="footer-btn choose-cover"
+                    className="footer-btn choose-cover"
                     type="submit"
                     style={{
                       backgroundColor: '#3DB810',

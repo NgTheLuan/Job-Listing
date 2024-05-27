@@ -42,19 +42,19 @@ function ListPage() {
           <Navbars />
           <br /> <br />
           <section
-            class="inner-header-title"
+            className="inner-header-title"
             style={{
               backgroundImage: `URL("https://www.mediafire.com/convkey/3256/oy9yrpyhvvwgu8b6g.jpg")`,
             }}
           >
-            <div class="container">
+            <div className="container">
               <h1>Browse Jobs</h1>
             </div>
           </section>
-          <section class="brows-job-category">
-            <div class="container">
+          <section className="brows-job-category">
+            <div className="container">
               <Filters />
-              <div class="item-click">
+              <div className="item-click">
                 {jobs.map((job) => {
                   return <JobList key={job._id} job={job} deleteJob={deleteJob} />;
                 })}

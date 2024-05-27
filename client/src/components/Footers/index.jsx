@@ -16,27 +16,27 @@ function Footers() {
               <div className="textwidget">
                 <ul className="footer-social">
                   <li>
-                    <a href={'https://www.facebook.com/ngtheluan.99'} target="_blank">
+                    <a href={'https://www.facebook.com/ngtheluan.99'} target="_blank" rel="noreferrer">
                       <i className="fa fa-facebook"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={'# '} target="_blank">
+                    <a href={'# '} target="_blank" rel="noreferrer">
                       <i className="fa fa-google-plus"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={'https://twitter.com/ngtheluan99'} target="_blank">
+                    <a href={'https://twitter.com/ngtheluan99'} target="_blank" rel="noreferrer">
                       <i className="fa fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={'https://www.instagram.com/ng.thluan/'} target="_blank">
+                    <a href={'https://www.instagram.com/ng.thluan/'} target="_blank" rel="noreferrer">
                       <i className="fa fa-instagram"></i>
                     </a>
                   </li>
                   <li>
-                    <a href={'https://www.linkedin.com/in/ngtheluan99/'} target="_blank">
+                    <a href={'https://www.linkedin.com/in/ngtheluan99/'} target="_blank" rel="noreferrer">
                       <i className="fa fa-linkedin"></i>
                     </a>
                   </li>

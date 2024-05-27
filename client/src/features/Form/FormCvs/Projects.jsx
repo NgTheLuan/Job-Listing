@@ -1,6 +1,5 @@
 import axios from 'axios';
-//import { useFormik } from 'formik';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useProject } from '../../../components/Store/Project';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -11,9 +10,9 @@ const Projects = (props) => {
   const [formState, formActions] = useProject();
   const [project, setProject] = useState({
     project: '',
-  })
+  });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     const data = {
       project: project.project,
@@ -21,8 +20,8 @@ const Projects = (props) => {
       projectId: cvState.projectId,
     };
     await formActions.stepProject(data);
-    props.history.push('/createcv-experience');
-  }
+    props.navigate.push('/createcv-experience');
+  }, [project, cvState.cvId, cvState.projectId, formActions, props.navigate]);
 
   useEffect(() => {
     if (!cvState.projectId) {
@@ -34,20 +33,20 @@ const Projects = (props) => {
     } else {
       return () => handleSubmit;
     }
-  }, [cvState.cvId])
+  }, [cvState.cvId, cvActions, cvState.projectId, handleSubmit]);
 
   const previous = () => {
-    props.history.push('/createcv-education');
+    props.navigate.push('/createcv-education');
   };
 
   return (
     <>
-      <section class="full-detail">
+      <section className="full-detail">
         <form onSubmit={handleSubmit}>
-          <div class="container">
-            <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">Project Details</h2>
-              <div class="col-md-12 col-sm-12">
+          <div className="container">
+            <div className="row bottom-mrg extra-mrg">
+              <h2 className="detail-title">Project Details</h2>
+              <div className="col-md-12 col-sm-12">
                 <CKEditor
                   required
                   id="project"
@@ -60,11 +59,11 @@ const Projects = (props) => {
                 />
               </div>
             </div>
-            <div class="detail pannel-footer">
-              <div class="col-md-12 col-sm-12">
-                <div class="detail-pannel-footer-btn pull-left">
+            <div className="detail pannel-footer">
+              <div className="col-md-12 col-sm-12">
+                <div className="detail-pannel-footer-btn pull-left">
                   <button
-                    class="footer-btn choose-cover"
+                    className="footer-btn choose-cover"
                     onClick={previous}
                     style={{
                       backgroundColor: '#3DB810',
@@ -81,9 +80,9 @@ const Projects = (props) => {
                   </button>
                 </div>
 
-                <div class="detail-pannel-footer-btn pull-right">
+                <div className="detail-pannel-footer-btn pull-right">
                   <button
-                    class="footer-btn choose-cover"
+                    className="footer-btn choose-cover"
                     type="submit"
                     style={{
                       backgroundColor: '#3DB810',

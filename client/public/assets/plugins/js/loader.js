@@ -24,13 +24,13 @@
         }, options);
 
         //Customized Spinners
-        var spinner01 = '<div class="fl spinner1"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>';
-        var spinner02 = '<div class="fl spinner2"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div>';
-        var spinner03 = '<div class="fl spinner3"><div class="dot1"></div><div class="dot2"></div></div>';
-        var spinner04 = '<div class="fl spinner4"></div>'; 
-        var spinner05 = '<div class="fl spinner5"><div class="cube1"></div><div class="cube2"></div></div>'; 
-        var spinner06 = '<div class="fl spinner6"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>'; 
-        var spinner07 = '<div class="fl spinner7"><div class="circ1"></div><div class="circ2"></div><div class="circ3"></div><div class="circ4"></div></div>'; 
+        var spinner01 = '<div className="fl spinner1"><div className="double-bounce1"></div><div className="double-bounce2"></div></div>';
+        var spinner02 = '<div className="fl spinner2"><div className="spinner-container container1"><div className="circle1"></div><div className="circle2"></div><div className="circle3"></div><div className="circle4"></div></div><div className="spinner-container container2"><div className="circle1"></div><div className="circle2"></div><div className="circle3"></div><div className="circle4"></div></div><div className="spinner-container container3"><div className="circle1"></div><div className="circle2"></div><div className="circle3"></div><div className="circle4"></div></div></div>';
+        var spinner03 = '<div className="fl spinner3"><div className="dot1"></div><div className="dot2"></div></div>';
+        var spinner04 = '<div className="fl spinner4"></div>'; 
+        var spinner05 = '<div className="fl spinner5"><div className="cube1"></div><div className="cube2"></div></div>'; 
+        var spinner06 = '<div className="fl spinner6"><div className="rect1"></div><div className="rect2"></div><div className="rect3"></div><div className="rect4"></div><div className="rect5"></div></div>'; 
+        var spinner07 = '<div className="fl spinner7"><div className="circ1"></div><div className="circ2"></div><div className="circ3"></div><div className="circ4"></div></div>'; 
 
         //The target
         var el = $(this);
@@ -80,7 +80,7 @@
                 //Add customized loader image
 
                 if (settings.imagePath !='') {
-                    el.html('<div class="fl"><img src="'+settings.imagePath+'"></div>');
+                    el.html('<div className="fl"><img src="'+settings.imagePath+'"></div>');
                 }
                 centerLoader();
         });

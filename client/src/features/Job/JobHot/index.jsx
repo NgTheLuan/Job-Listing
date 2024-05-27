@@ -37,7 +37,7 @@ function JobHot() {
                       <div className="popular-jobs-box">
                         <div className="popular-jobs-box-detail">
                           <Link className="btn_view1" to={`jobs/detail/${job._id}`}>
-                            <img src={job.imgCom} style={{ width: '40%' }} />
+                            <img alt="img" src={job.imgCom} style={{ width: '40%' }} />
                           </Link>
 
                           <h4 style={{ fontWeight: 'bold', color: '#00CC00' }}>{job.nameCom}</h4>
@@ -55,7 +55,7 @@ function JobHot() {
                         </ul>
 
                         <p>
-                          <i class="fa fa-map-marker"></i>&nbsp;
+                          <i className="fa fa-map-marker"></i>&nbsp;
                           {job.location.street}
                         </p>
                       </div>

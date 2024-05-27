@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Progress = ({ location: { pathname } }) => {
+const Progress = () => {
+  const location = useLocation();
+  const { pathname } = location;
+
   const isFirstStep = pathname === '/createcv';
   const isSecondStep = pathname === '/createcv-profile';
   const isThirdStep = pathname === '/createcv-education';
@@ -16,7 +19,7 @@ const Progress = ({ location: { pathname } }) => {
         <div className={`${isFirstStep ? 'step active' : 'step'}`}>
           <div>1</div>
           <div>
-            {isSecondStep || isThirdStep || isFourthStep || isFifthStep || isSixthStep || isSeventhStep? 
+            {isSecondStep || isThirdStep || isFourthStep || isFifthStep || isSixthStep || isSeventhStep ? 
               <Link to="/createcv">Overview</Link> : 'Overview'
             }
           </div>
@@ -76,4 +79,4 @@ const Progress = ({ location: { pathname } }) => {
   );
 };
 
-export default withRouter(Progress);
+export default Progress;

@@ -3,13 +3,13 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthContext';
 import axios from 'axios';
 import { useCV } from '../Store/CV';
-import { GlobalState } from '../../GlobalState';
+// import { GlobalState } from '../../GlobalState';
 
 const Navbars = () => {
-  const [state, actions] = useCV();
+  const [actions] = useCV();
   const auth = useContext(AuthContext);
 
-  const state1 = useContext(GlobalState);
+  // const state1 = useContext(GlobalState);
   // const [favorite] = state1.userAPI.favorite;
 
   const createCV = async () => {
@@ -40,17 +40,17 @@ const Navbars = () => {
               </li>
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
-                <li class="btn-group" onClick={createCV}>
+                <li className="btn-group" onClick={createCV}>
                   <NavLink to="/createcv">Create CV</NavLink>
                 </li>
               )}
 
               {auth.isLoggedIn && !auth.isAdmin && !auth.isEmployer && (
                 <>
-                  <li class="btn-group">
+                  <li className="btn-group">
                     <NavLink to="/managecv">Manage CV</NavLink>
                   </li>
-                  <li class="btn-group">
+                  <li className="btn-group">
                     <NavLink to="/favorite">Favorite</NavLink>
                   </li>
                 </>
@@ -73,6 +73,7 @@ const Navbars = () => {
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      href='#1'
                     >
                       Job
                     </a>
@@ -94,6 +95,7 @@ const Navbars = () => {
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      href='#1'
                     >
                       User
                     </a>
@@ -112,6 +114,7 @@ const Navbars = () => {
                       data-toggle="dropdown"
                       aria-haspopup="true"
                       aria-expanded="false"
+                      href='#1'
                     >
                       CV
                     </a>
@@ -128,17 +131,17 @@ const Navbars = () => {
               )}
             </ul>
 
-            <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+            <ul className="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
               {auth.isLoggedIn && (
                 <li>
-                  <a class="signin" onClick={auth.logout} style={{ cursor: 'pointer' }}>
-                    <i class="fa fa-sign-in" aria-hidden="true"></i>Log out
+                  <a className="signin" href='#1' onClick={auth.logout} style={{ cursor: 'pointer' }}>
+                    <i className="fa fa-sign-in" aria-hidden="true"></i>Log out
                   </a>
                 </li>
               )}
               {!auth.isLoggedIn && (
                 <li>
-                  <NavLink to="/login" class="signin">
+                  <NavLink to="/login" className="signin">
                     Log In Now
                   </NavLink>
                 </li>

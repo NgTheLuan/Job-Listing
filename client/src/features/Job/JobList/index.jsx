@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.css';
 import { AuthContext } from '../../../components/Context/AuthContext';
-import { GlobalState } from '../../../GlobalState';
 import axios from 'axios';
 
 function JobList({ job, deleteJob }) {
@@ -37,9 +36,9 @@ function JobList({ job, deleteJob }) {
       }
     };
     getUser();
-  }, []);
+  }, [auth.userId]);
 
-  if (auth.isAdmin == true && auth.isLoggedIn == true) {
+  if (auth.isAdmin === true && auth.isLoggedIn === true) {
     return (
       <>
         <article>
@@ -103,7 +102,7 @@ function JobList({ job, deleteJob }) {
       </>
     );
   }
-  if (auth.isLoggedIn == true) {
+  if (auth.isLoggedIn === true) {
     return (
       <>
         <article>
@@ -148,10 +147,10 @@ function JobList({ job, deleteJob }) {
             <div className="col-md-1 col-sm-2">
               <div className="brows-job-link" style={{ paddingTop: '5%' }}>
                 {/* <Link className="btn_view" to={`jobs/detail/${job._id}`}>
-                  <i class="fas fa-eye" style={{ color: '#3366CC' }}></i>
+                  <i className="fas fa-eye" style={{ color: '#3366CC' }}></i>
                 </Link> */}
-                <Link to="#" class="btn_view" title="" onClick={() => addFavoriteJob(job)}>
-                  <i class="fas fa-heart" style={{ color: '#E33539' }}></i>
+                <Link to="#" className="btn_view" title="" onClick={() => addFavoriteJob(job)}>
+                  <i className="fas fa-heart" style={{ color: '#E33539' }}></i>
                 </Link>
               </div>
             </div>
@@ -200,7 +199,7 @@ function JobList({ job, deleteJob }) {
             <div className="col-md-2 col-sm-2">
               <div className="brows-job-link">
                 {/* <Link className="btn_view" to={`jobs/detail/${job._id}`}>
-                  <i class="fas fa-eye" style={{ color: '#3366CC' }}></i>
+                  <i className="fas fa-eye" style={{ color: '#3366CC' }}></i>
                 </Link> */}
               </div>
               <span style={{ float: 'right', width: '75%', backgroundColor: '#FF7F24', color: '#F0FFFF' }}>

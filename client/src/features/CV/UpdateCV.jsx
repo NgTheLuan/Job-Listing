@@ -126,44 +126,44 @@ const UpdateCV = (props) => {
     <>
       {loadedCvs && (
         <>
-          <section class="inner-header-page">
-            <div class="container">
-              <div class="col-md-8">
-                <div class="left-side-container">
-                  <div class="header-details">
+          <section className="inner-header-page">
+            <div className="container">
+              <div className="col-md-8">
+                <div className="left-side-container">
+                  <div className="header-details">
                     <h4>{loadedCvs.profile[0].lastname} {loadedCvs.profile[0].firstname}</h4>
                     <p>{loadedCvs.position}</p>
                     <ul>
-                      <li><span class="detail-info">Date of Birth: </span>{loadedCvs.profile[0].dob}</li>
-                      <li><span class="detail-info">Email: </span>{loadedCvs.profile[0].email}</li>
-                      <li><span class="detail-info">Phone number: </span>{loadedCvs.profile[0].phone}</li><br />
-                      <li><span class="detail-info">Address: </span>{loadedCvs.profile[0].address}</li>
+                      <li><span className="detail-info">Date of Birth: </span>{loadedCvs.profile[0].dob}</li>
+                      <li><span className="detail-info">Email: </span>{loadedCvs.profile[0].email}</li>
+                      <li><span className="detail-info">Phone number: </span>{loadedCvs.profile[0].phone}</li><br />
+                      <li><span className="detail-info">Address: </span>{loadedCvs.profile[0].address}</li>
                     </ul>
-                    <ul class="detail-footer-social">
+                    <ul className="detail-footer-social">
                       <li>
                         <a href={'# '} style={{ color: 'white' }}>
-                          <i class="fa fa-facebook" style={{ backgroundColor: '#3B5998' }}></i>
+                          <i className="fa fa-facebook" style={{ backgroundColor: '#3B5998' }}></i>
                         </a>
                       </li>
 
                       <li>
                         <a href="# " style={{ color: 'white' }}>
-                          <i class="fa fa-google-plus" style={{ backgroundColor: '#DC3545' }}></i>
+                          <i className="fa fa-google-plus" style={{ backgroundColor: '#DC3545' }}></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#" style={{ color: 'white' }}>
-                          <i class="fa fa-twitter" style={{ backgroundColor: '#1DA1F2' }}></i>
+                        <a href="# " style={{ color: 'white' }}>
+                          <i className="fa fa-twitter" style={{ backgroundColor: '#1DA1F2' }}></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#" style={{ color: 'white' }}>
-                          <i class="fa fa-linkedin" style={{ backgroundColor: '#0088CC' }}></i>
+                        <a href="# " style={{ color: 'white' }}>
+                          <i className="fa fa-linkedin" style={{ backgroundColor: '#0088CC' }}></i>
                         </a>
                       </li>
                       <li>
-                        <a href="#" style={{ color: 'white' }}>
-                          <i class="fa fa-instagram" style={{ backgroundColor: '#E83E8C' }}></i>
+                        <a href="# " style={{ color: 'white' }}>
+                          <i className="fa fa-instagram" style={{ backgroundColor: '#E83E8C' }}></i>
                         </a>
                       </li>
                     </ul>
@@ -171,32 +171,32 @@ const UpdateCV = (props) => {
                 </div>
               </div>
 
-              <div class="col-md-4 bl-1 br-gary">
-                <div class="right-side-detail">
-                  <img src={loadedCvs.cvImage} class="" alt="" style={{ width: '200px', float: 'right' }} />
+              <div className="col-md-4 bl-1 br-gary">
+                <div className="right-side-detail">
+                  <img src={loadedCvs.cvImage} className="" alt="" style={{ width: '200px', float: 'right' }} />
                 </div>
               </div>
             </div>
           </section>
 
-          <section class="full-detail">
-            <div class="container">
-              <div class="row bottom-mrg extra-mrg">
-                <h2 class="detail-title">Overview</h2>
-                <div class="col-md-12 col-sm-12">
-                  <div class="input-group">
+          <section className="full-detail">
+            <div className="container">
+              <div className="row bottom-mrg extra-mrg">
+                <h2 className="detail-title">Overview</h2>
+                <div className="col-md-12 col-sm-12">
+                  <div className="input-group">
                     <label>Position: <p>{loadedCvs.position}</p></label><br />
                     <label>Bio: <p>{loadedCvs.bio}</p></label>
                   </div>
                 </div>
                 <hr />
                 <form onSubmit={cvState.handleSubmit}>
-                  <div class="col-md-12 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-12 col-sm-12">
+                    <div className="input-group">
                       <label>Position</label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="position"
                         placeholder={loadedCvs.position}
@@ -206,12 +206,12 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="col-md-12 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-12 col-sm-12">
+                    <div className="input-group">
                       <label>Bio</label>
                       <textarea
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="bio"
                         placeholder={loadedCvs.bio}
@@ -221,11 +221,11 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="detail pannel-footer">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="detail-pannel-footer-btn pull-right">
+                  <div className="detail pannel-footer">
+                    <div className="col-md-12 col-sm-12">
+                      <div className="detail-pannel-footer-btn pull-right">
                         <button
-                          class="footer-btn choose-cover"
+                          className="footer-btn choose-cover"
                           type="submit"
                           style={{
                             backgroundColor: '#3DB810',
@@ -246,42 +246,42 @@ const UpdateCV = (props) => {
                 </form>
               </div>
 
-              <div class="row bottom-mrg extra-mrg">
-                <h2 class="detail-title">Personal Details</h2>
-                <div class="col-md-4 col-sm-12">
-                  <label>Firstname: <a>{loadedCvs.profile[0].firstname}</a></label>
+              <div className="row bottom-mrg extra-mrg">
+                <h2 className="detail-title">Personal Details</h2>
+                <div className="col-md-4 col-sm-12">
+                  <label>Firstname: <a href=" ">{loadedCvs.profile[0].firstname}</a></label>
                 </div>
-                <div class="col-md-4 col-sm-12">
-                  <label>Lastname: <a>{loadedCvs.profile[0].lastname}</a></label>
+                <div className="col-md-4 col-sm-12">
+                  <label>Lastname: <a href=" ">{loadedCvs.profile[0].lastname}</a></label>
                 </div>
-                <div class="col-md-4 col-sm-12">
-                  <div class="input-group">
-                    <label>Birthday: <a>{loadedCvs.profile[0].dob}</a></label>
+                <div className="col-md-4 col-sm-12">
+                  <div className="input-group">
+                    <label>Birthday: <a href=" ">{loadedCvs.profile[0].dob}</a></label>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="input-group">
-                    <label>Email: <a>{loadedCvs.profile[0].email}</a></label>
+                <div className="col-md-6 col-sm-12">
+                  <div className="input-group">
+                    <label>Email: <a href=" ">{loadedCvs.profile[0].email}</a></label>
                   </div>
                 </div>
-                <div class="col-md-6 col-sm-12">
-                  <div class="input-group">
-                    <label>Phone: <a>{loadedCvs.profile[0].phone}</a></label>
+                <div className="col-md-6 col-sm-12">
+                  <div className="input-group">
+                    <label>Phone: <a href=" ">{loadedCvs.profile[0].phone}</a></label>
                   </div>
                 </div>
-                <div class="col-md-12 col-sm-12">
-                  <div class="input-group">
-                    <label>Address: <a>{loadedCvs.profile[0].address}</a></label>
+                <div className="col-md-12 col-sm-12">
+                  <div className="input-group">
+                    <label>Address: <a href=" ">{loadedCvs.profile[0].address}</a></label>
                   </div>
                 </div>
                 <hr />
                 <form onSubmit={profileState.handleSubmit}>
-                  <div class="col-md-4 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-4 col-sm-12">
+                    <div className="input-group">
                       <label>First Name</label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="firstname"
                         data={loadedCvs.profile[0].firstname}
@@ -291,12 +291,12 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="col-md-4 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-4 col-sm-12">
+                    <div className="input-group">
                       <label>Last Name</label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="lastname"
                         placeholder={loadedCvs.profile[0].lastname}
@@ -306,12 +306,12 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="col-md-4 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-4 col-sm-12">
+                    <div className="input-group">
                       <label>Date of birth</label>
                       <input
                         type="date"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="dob"
                         placeholder={loadedCvs.profile[0].dob}
@@ -321,12 +321,12 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="col-md-6 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-6 col-sm-12">
+                    <div className="input-group">
                       <label>Email</label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="email"
                         placeholder={loadedCvs.profile[0].email}
@@ -336,12 +336,12 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="col-md-6 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-6 col-sm-12">
+                    <div className="input-group">
                       <label>Phone</label>
                       <input
                         type="phone"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="phone"
                         placeholder={loadedCvs.profile[0].phone}
@@ -351,12 +351,12 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="col-md-12 col-sm-12">
-                    <div class="input-group">
+                  <div className="col-md-12 col-sm-12">
+                    <div className="input-group">
                       <label>Address</label>
                       <input
                         type="text"
-                        class="form-control"
+                        className="form-control"
                         required
                         name="address"
                         placeholder={loadedCvs.profile[0].address}
@@ -366,11 +366,11 @@ const UpdateCV = (props) => {
                     </div>
                   </div>
 
-                  <div class="detail pannel-footer">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="detail-pannel-footer-btn pull-right">
+                  <div className="detail pannel-footer">
+                    <div className="col-md-12 col-sm-12">
+                      <div className="detail-pannel-footer-btn pull-right">
                         <button
-                          class="footer-btn choose-cover"
+                          className="footer-btn choose-cover"
                           type="submit"
                           style={{
                             backgroundColor: '#3DB810',
@@ -391,10 +391,10 @@ const UpdateCV = (props) => {
                 </form>
               </div>
 
-              <div class="row bottom-mrg extra-mrg">
-                <h2 class="detail-title">Education Details</h2>
+              <div className="row bottom-mrg extra-mrg">
+                <h2 className="detail-title">Education Details</h2>
                 <form onSubmit={updateEdu}>
-                  <div class="col-md-12 col-sm-12">
+                  <div className="col-md-12 col-sm-12">
                     <CKEditor
                       required
                       id="education"
@@ -407,11 +407,11 @@ const UpdateCV = (props) => {
                     />
                   </div>
 
-                  <div class="detail pannel-footer">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="detail-pannel-footer-btn pull-right">
+                  <div className="detail pannel-footer">
+                    <div className="col-md-12 col-sm-12">
+                      <div className="detail-pannel-footer-btn pull-right">
                         <button
-                          class="footer-btn choose-cover"
+                          className="footer-btn choose-cover"
                           type="submit"
                           style={{
                             backgroundColor: '#3DB810',
@@ -432,10 +432,10 @@ const UpdateCV = (props) => {
                 </form>
               </div>
 
-              <div class="row bottom-mrg extra-mrg">
-                <h2 class="detail-title">Project Details</h2>
+              <div className="row bottom-mrg extra-mrg">
+                <h2 className="detail-title">Project Details</h2>
                 <form onSubmit={updateProject}>
-                  <div class="col-md-12 col-sm-12">
+                  <div className="col-md-12 col-sm-12">
                     <CKEditor
                       required
                       id="project"
@@ -448,11 +448,11 @@ const UpdateCV = (props) => {
                     />
                   </div>
 
-                  <div class="detail pannel-footer">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="detail-pannel-footer-btn pull-right">
+                  <div className="detail pannel-footer">
+                    <div className="col-md-12 col-sm-12">
+                      <div className="detail-pannel-footer-btn pull-right">
                         <button
-                          class="footer-btn choose-cover"
+                          className="footer-btn choose-cover"
                           type="submit"
                           style={{
                             backgroundColor: '#3DB810',
@@ -473,10 +473,10 @@ const UpdateCV = (props) => {
                 </form>
               </div>
 
-              <div class="row bottom-mrg extra-mrg">
-                <h2 class="detail-title">Experience Details</h2>
+              <div className="row bottom-mrg extra-mrg">
+                <h2 className="detail-title">Experience Details</h2>
                 <form onSubmit={updateExp}>
-                  <div class="col-md-12 col-sm-12">
+                  <div className="col-md-12 col-sm-12">
                     <CKEditor
                       required
                       id="expDescription"
@@ -488,11 +488,11 @@ const UpdateCV = (props) => {
                       }}
                     />
                   </div>
-                  <div class="detail pannel-footer">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="detail-pannel-footer-btn pull-right">
+                  <div className="detail pannel-footer">
+                    <div className="col-md-12 col-sm-12">
+                      <div className="detail-pannel-footer-btn pull-right">
                         <button
-                          class="footer-btn choose-cover"
+                          className="footer-btn choose-cover"
                           type="submit"
                           style={{
                             backgroundColor: '#3DB810',
@@ -513,10 +513,10 @@ const UpdateCV = (props) => {
                 </form>
               </div>
 
-              <div class="row bottom-mrg extra-mrg">
-                <h2 class="detail-title">Extra Details</h2>
+              <div className="row bottom-mrg extra-mrg">
+                <h2 className="detail-title">Extra Details</h2>
                 <form onSubmit={updateExtra}>
-                  <div class="col-md-12 col-sm-12">
+                  <div className="col-md-12 col-sm-12">
                     <CKEditor
                       required
                       id="addInfor"
@@ -528,11 +528,11 @@ const UpdateCV = (props) => {
                       }}
                     />
                   </div>
-                  <div class="detail pannel-footer">
-                    <div class="col-md-12 col-sm-12">
-                      <div class="detail-pannel-footer-btn pull-right">
+                  <div className="detail pannel-footer">
+                    <div className="col-md-12 col-sm-12">
+                      <div className="detail-pannel-footer-btn pull-right">
                         <button
-                          class="footer-btn choose-cover"
+                          className="footer-btn choose-cover"
                           type="submit"
                           style={{
                             backgroundColor: '#3DB810',
@@ -553,9 +553,9 @@ const UpdateCV = (props) => {
                 </form>
               </div>
 
-              <div class="col-md-12 col-sm-12">
+              <div className="col-md-12 col-sm-12">
                 <Link to='/managecv'>
-                  <a class="btn btn-success btn-primary small-btn">
+                  <a className="btn btn-success btn-primary small-btn" href=" ">
                     Finish
                   </a>
                 </Link>

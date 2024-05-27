@@ -2539,7 +2539,7 @@ rangy.createModule("DomUtil", function(api, module) {
 
             var iframeDoc = dom.getIframeDocument(iframe);
             iframeDoc.open();
-            iframeDoc.write("<html><head></head><body>12</body></html>");
+            iframeDoc.appendChild("<html><head></head><body>12</body></html>");
             iframeDoc.close();
 
             var sel = dom.getIframeWindow(iframe).getSelection();
@@ -4727,7 +4727,7 @@ wysihtml5.dom.observe = function(element, eventNames, handler) {
  *    });
  *    // => ''
  *
- *    var userHTML = '<div class="red">foo</div><div class="pink">bar</div>';
+ *    var userHTML = '<div className="red">foo</div><div className="pink">bar</div>';
  *    wysihtml5.dom.parse(userHTML, {
  *      classes: {
  *        red:    1,
@@ -4739,7 +4739,7 @@ wysihtml5.dom.observe = function(element, eventNames, handler) {
  *        }
  *      }
  *    });
- *    // => '<p class="red">foo</p><p>bar</p>'
+ *    // => '<p className="red">foo</p><p>bar</p>'
  */
 wysihtml5.dom.parse = (function() {
   
@@ -5453,7 +5453,7 @@ wysihtml5.dom.replaceWithChildNodes = function(node) {
 
       // Create the basic dom tree including proper DOCTYPE and charset
       iframeDocument.open("text/html", "replace");
-      iframeDocument.write(sandboxHtml);
+      iframeDocument.appendChild(sandboxHtml);
       iframeDocument.close();
 
       this.getWindow = function() { return iframe.contentWindow; };
@@ -6048,7 +6048,7 @@ wysihtml5.quirks.cleanPastedHTML = (function() {
           oldScrollTop          = restoreScrollPosition && body.scrollTop,
           oldScrollLeft         = restoreScrollPosition && body.scrollLeft,
           className             = "_wysihtml5-temp-placeholder",
-          placeholderHTML       = '<span class="' + className + '">' + wysihtml5.INVISIBLE_SPACE + '</span>',
+          placeholderHTML       = '<span className="' + className + '">' + wysihtml5.INVISIBLE_SPACE + '</span>',
           range                 = this.getRange(this.doc),
           newRange;
       
@@ -7201,7 +7201,7 @@ wysihtml5.Commands = Base.extend(
         return;
       }
 
-      // Find similiar block element and rename it (<h2 class="foo"></h2>  =>  <h1 class="foo"></h1>)
+      // Find similiar block element and rename it (<h2 className="foo"></h2>  =>  <h1 className="foo"></h1>)
       if (nodeName === null || wysihtml5.lang.array(BLOCK_ELEMENTS_GROUP).contains(nodeName)) {
         selectedNode = composer.selection.getSelectedNode();
         blockElement = dom.getParentElement(selectedNode, {
@@ -7704,8 +7704,8 @@ wysihtml5.Commands = Base.extend(
       BACKSPACE_KEY       = 8,
       DELETE_KEY          = 46,
       MAX_HISTORY_ENTRIES = 40,
-      UNDO_HTML           = '<span id="_wysihtml5-undo" class="_wysihtml5-temp">' + wysihtml5.INVISIBLE_SPACE + '</span>',
-      REDO_HTML           = '<span id="_wysihtml5-redo" class="_wysihtml5-temp">' + wysihtml5.INVISIBLE_SPACE + '</span>',
+      UNDO_HTML           = '<span id="_wysihtml5-undo" className="_wysihtml5-temp">' + wysihtml5.INVISIBLE_SPACE + '</span>',
+      REDO_HTML           = '<span id="_wysihtml5-redo" className="_wysihtml5-temp">' + wysihtml5.INVISIBLE_SPACE + '</span>',
       dom                 = wysihtml5.dom;
   
   function cleanTempElements(doc) {
@@ -7721,7 +7721,7 @@ wysihtml5.Commands = Base.extend(
       this.editor = editor;
       this.composer = editor.composer;
       this.element = this.composer.element;
-      this.history = [this.composer.getValue()];
+      this.navigate = [this.composer.getValue()];
       this.position = 1;
       
       // Undo manager currently only supported in browsers who have the insertHTML command (not IE)
@@ -7824,21 +7824,21 @@ wysihtml5.Commands = Base.extend(
     },
     
     transact: function() {
-      var previousHtml  = this.history[this.position - 1],
+      var previousHtml  = this.navigate[this.position - 1],
           currentHtml   = this.composer.getValue();
       
       if (currentHtml == previousHtml) {
         return;
       }
       
-      var length = this.history.length = this.position;
+      var length = this.navigate.length = this.position;
       if (length > MAX_HISTORY_ENTRIES) {
-        this.history.shift();
+        this.navigate.shift();
         this.position--;
       }
       
       this.position++;
-      this.history.push(currentHtml);
+      this.navigate.push(currentHtml);
     },
     
     undo: function() {
@@ -7848,16 +7848,16 @@ wysihtml5.Commands = Base.extend(
         return;
       }
       
-      this.set(this.history[--this.position - 1]);
+      this.set(this.navigate[--this.position - 1]);
       this.editor.fire("undo:composer");
     },
     
     redo: function() {
-      if (this.position >= this.history.length) {
+      if (this.position >= this.navigate.length) {
         return;
       }
       
-      this.set(this.history[++this.position - 1]);
+      this.set(this.navigate[++this.position - 1]);
       this.editor.fire("redo:composer");
     },
     
