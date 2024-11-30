@@ -32,7 +32,7 @@ router.post("/upload", (req, res) => {
 
     cloudinary.v2.uploader.upload(
       file.tempFilePath,
-      { folder: "Job-Listing" },
+      { folder: "jobsTLK" },
       async (err, result) => {
         if (err) throw err;
         removeTmp(file.tempFilePath);

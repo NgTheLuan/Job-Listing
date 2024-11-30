@@ -48,9 +48,9 @@ function Category() {
               <div>{loadcategories}</div>
               <div>
                 {visible < categories.length && (
-                  <a className="btn btn-primary" onClick={handleLoadMore}>
+                  <button className="btn btn-primary" onClick={handleLoadMore}>
                     Load More
-                  </a>
+                  </button>
                 )}
               </div>
             </h2>

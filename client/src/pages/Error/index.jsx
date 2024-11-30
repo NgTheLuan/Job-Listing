@@ -5,14 +5,14 @@ function Error() {
   return (
     <>
       <Navbar />
-      <section class="simple-bg-screen big-wrap">
-        <div class="container">
-          <div class="error-page">
+      <section className="simple-bg-screen big-wrap">
+        <div className="container">
+          <div className="error-page">
             <h2>
               4<span>0</span>4
             </h2>
             <p>Oops...looks like we got lost</p>
-            <a class="btn btn-success small-btn" href="# ">
+            <a className="btn btn-success small-btn" href="# ">
               Let's Go Home
             </a>
           </div>

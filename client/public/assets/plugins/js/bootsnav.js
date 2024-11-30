@@ -21,7 +21,7 @@
             var navSticky = getNav.hasClass("navbar-sticky");
             if( navSticky ){
                 // Wraped navigation
-                getNav.wrap("<div class='wrap-sticky'></div>");
+                getNav.wrap("<div className='wrap-sticky'></div>");
             }   
             
             // ------------------------------------------------------------------------------ //
@@ -57,12 +57,12 @@
                 //Generate HTML for second list
                 createHTML(secondList);
                 //Create new list after original one
-                $postsList.after('<ul class="nav navbar-nav"></ul>').next().html(ListHTML);
+                $postsList.after('<ul className="nav navbar-nav"></ul>').next().html(ListHTML);
                 index.find("ul.nav").last().addClass("navbar-right");
                 
                 //Wrap navigation menu
-                index.find("ul.nav.navbar-left").wrap("<div class='col-half left'></div>");
-                index.find("ul.nav.navbar-right").wrap("<div class='col-half right'></div>");
+                index.find("ul.nav.navbar-left").wrap("<div className='col-half left'></div>");
+                index.find("ul.nav.navbar-right").wrap("<div className='col-half right'></div>");
                 
                 //Selection Class
                 index.find('ul.navbar-nav > li').each(function(){ 
@@ -80,7 +80,7 @@
             if( getNav.hasClass("navbar-sidebar")){
                 // Add Class to body
                 $("body").addClass("wrap-nav-sidebar");
-                getNav.wrapInner("<div class='scroller'></div>");
+                getNav.wrapInner("<div className='scroller'></div>");
             }else{
                 $(".bootsnav").addClass("on");
             }
@@ -97,9 +97,9 @@
             // ------------------------------------------------------------------------------ //
             if( getNav.hasClass("navbar-full")){
                 // Add Class to body
-                $("nav.navbar.bootsnav").find("ul.nav").wrap("<div class='wrap-full-menu'></div>");
-                $(".wrap-full-menu").wrap("<div class='nav-full'></div>");
-                $("ul.nav.navbar-nav").prepend("<li class='close-full-menu'><a href='#'><i class='fa fa-times'></i></a></li>");
+                $("nav.navbar.bootsnav").find("ul.nav").wrap("<div className='wrap-full-menu'></div>");
+                $(".wrap-full-menu").wrap("<div className='nav-full'></div>");
+                $("ul.nav.navbar-nav").prepend("<li className='close-full-menu'><a href='#'><i className='fa fa-times'></i></a></li>");
             }else if( getNav.hasClass("navbar-mobile")){
                 getNav.removeClass("no-full");
             }else{
@@ -192,7 +192,7 @@
             // ------------------------------------------------------------------------------ //
             // Wrapper
             // ------------------------------------------------------------------------------ //
-            $("body").wrapInner( "<div class='wrapper'></div>");
+            $("body").wrapInner( "<div className='wrapper'></div>");
         }, 
         
 

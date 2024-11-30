@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useExtra } from '../../../components/Store/Extra';
 import axios from 'axios';
@@ -10,21 +10,9 @@ const Extras = (props) => {
   const [formState, formActions] = useExtra();
   const [extra, setExtra] = useState({
     addInfor: '',
-  })
+  });
 
-  useEffect(() => {
-    if (!cvState.extraId) {
-      const fetch = async () => {
-        const extra = await axios.post(`http://localhost:5000/api/cvs/createExtra/${cvState.cvId}`);
-        cvActions.saveExtraId(extra.data.cv._id);
-      }
-      fetch();
-    } else {
-      return () => handleSubmit;
-    }
-  }, [cvState.cvId])
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     const data = {
       addInfor: extra.addInfor,
@@ -32,22 +20,31 @@ const Extras = (props) => {
       extraId: cvState.extraId,
     };
     await formActions.stepExtra(data);
-    props.history.push('/createcv-review');
-  }
+    props.navigate.push('/createcv-review');
+  }, [extra.addInfor, cvState.cvId, cvState.extraId, formActions, props.navigate]);
 
-  const previous = (data) => {
-    console.log(data);
-    props.history.push('/createcv-experience');
+  useEffect(() => {
+    const fetchExtra = async () => {
+      if (!cvState.extraId) {
+        const extraData = await axios.post(`http://localhost:5000/api/cvs/createExtra/${cvState.cvId}`);
+        cvActions.saveExtraId(extraData.data.cv._id);
+      }
+    };
+    fetchExtra();
+  }, [cvState.cvId, cvState.extraId, cvActions]);
+
+  const previous = () => {
+    props.navigate.push('/createcv-experience');
   };
 
   return (
     <>
-      <section class="full-detail">
+      <section className="full-detail">
         <form onSubmit={handleSubmit}>
-          <div class="container">
-            <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">Extras Details</h2>
-              <div class="col-md-12 col-sm-12">
+          <div className="container">
+            <div className="row bottom-mrg extra-mrg">
+              <h2 className="detail-title">Extras Details</h2>
+              <div className="col-md-12 col-sm-12">
                 <CKEditor
                   required
                   id="addInfor"
@@ -61,11 +58,11 @@ const Extras = (props) => {
               </div>
             </div>
 
-            <div class="detail pannel-footer">
-              <div class="col-md-12 col-sm-12">
-                <div class="detail-pannel-footer-btn pull-left">
+            <div className="detail pannel-footer">
+              <div className="col-md-12 col-sm-12">
+                <div className="detail-pannel-footer-btn pull-left">
                   <button
-                    class="footer-btn choose-cover"
+                    className="footer-btn choose-cover"
                     onClick={previous}
                     style={{
                       backgroundColor: '#3DB810',
@@ -82,9 +79,9 @@ const Extras = (props) => {
                   </button>
                 </div>
 
-                <div class="detail-pannel-footer-btn pull-right">
+                <div className="detail-pannel-footer-btn pull-right">
                   <button
-                    class="footer-btn choose-cover"
+                    className="footer-btn choose-cover"
                     type="submit"
                     style={{
                       backgroundColor: '#3DB810',

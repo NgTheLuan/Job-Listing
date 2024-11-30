@@ -18,10 +18,12 @@ const ManageCV = (props) => {
         const data = responseData.cvs;
         setLoadedCvs(data);
         setCallBack(!callback);
-      } catch (error) {}
+      } catch (error) {
+        console.error(error); // You should handle the error appropriately
+      }
     };
     fetchCvs();
-  }, [callback]);
+  }, [auth.userId, sendRequest, callback]);
 
   const onView = async (cv) => {
     try {
@@ -125,7 +127,7 @@ const ManageCV = (props) => {
                             </button>
                             <div className="dropdown-menu pull-right animated flipInX">
                               <Link to={`/cvs/updatecv/${cv.id}`}>
-                                <a onClick={onUpdate}>
+                                <a onClick={onUpdate} href=" "> 
                                   <i className="fa fa-edit" style={{ fontSize: '110%' }}></i>&nbsp; Edit
                                 </a>
                               </Link>
@@ -133,6 +135,7 @@ const ManageCV = (props) => {
                                 onClick={() => {
                                   onDelete(cv.id);
                                 }}
+                                href=" "
                               >
                                 <i className="fa fa-trash-o" style={{ fontSize: '110%' }}></i>&nbsp; Delete
                               </a>

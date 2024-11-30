@@ -23,8 +23,8 @@ function Filters() {
 
   return (
     <>
-      <div class="row extra-mrg">
-        <div class="wrap-search-filter">
+      <div className="row extra-mrg">
+        <div className="wrap-search-filter">
           <form>
             <div className="col-md-3 col-sm-6">
               <input

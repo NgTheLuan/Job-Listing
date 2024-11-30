@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import './App.css';
 import { DataProvider } from './GlobalState';
 
-import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import { AuthContext } from './components/Context/AuthContext';
 import Auxx from './components/Context/Auxx';
 
@@ -23,7 +23,7 @@ import CvList from './pages/CV/CVList';
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
-  const [isEmployer, setIsEmployer] = useState(false);
+  const [setIsEmployer] = useState(false);
   const [userId, setUserId] = useState(false);
 
   const login = useCallback((uid) => {
@@ -45,65 +45,7 @@ const App = () => {
       setIsAdmin(false);
       setIsEmployer(false);
     }
-  }, []);
-
-  let routes;
-
-  if (isAdmin && isLoggedIn) {
-    routes = (
-      <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/manage-category" component={ManageCategory} exact />
-        <Route path="/create-job" component={AddJob} exact />
-        <Route path="/edit-job/:id" component={AddJob} exact />
-        <Route path="/jobs" component={Jobs} exact />
-        <Route path="/detail/:id" component={DetailPage} exact />
-        <Route path="/jobs/detail/:id" component={DetailPage} exact />
-        <Redirect to="/" />
-      </Switch>
-    );
-  } else if (isLoggedIn && isEmployer === true) {
-    routes = (
-      <Switch>
-        <Route path="/" component={Home} exact />
-        <Redirect to="/" />
-      </Switch>
-    );
-  } else if (isLoggedIn && isAdmin === false && isEmployer === false) {
-    routes = (
-      <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/jobs" component={Jobs} exact />
-        <Route path="/createcv" component={CvRouter} exact />
-        <Route path="/createcv-profile" component={CvRouter} exact />
-        <Route path="/createcv-education" component={CvRouter} exact />
-        <Route path="/createcv-project" component={CvRouter} exact />
-        <Route path="/createcv-experience" component={CvRouter} exact />
-        <Route path="/createcv-extras" component={CvRouter} exact />
-        <Route path="/createcv-review" component={CvRouter} exact />
-        <Route path="/managecv" component={CvList} exact />
-        <Route path="/cvs/updatecv/:cvId" component={CvUpdate} exact />
-        <Route path="/cvs/details/:cvId" component={CvsDetails} exact />
-        <Route path="/detail/:id" component={DetailPage} exact />
-        <Route path="/jobs/detail/:id" component={DetailPage} exact />
-        <Route path="/favorite" component={FavoritesJob} exact />
-        <Redirect to="/" />
-      </Switch>
-    );
-  } else {
-    routes = (
-      <Switch>
-        <Route path="/" component={Home} exact />
-        <Route path="/jobs" component={Jobs} exact />
-        <Route path="/detail/:id" component={DetailPage} exact />
-        <Route path="/jobs/detail/:id" component={DetailPage} exact />
-        <Route path="/register" component={Register} exact />
-        <Route path="/login" component={Login} exact />
-        <Route component={Error} />
-        <Redirect to="/" />
-      </Switch>
-    );
-  }
+  }, [setIsEmployer]);
 
   return (
     <DataProvider>
@@ -119,7 +61,29 @@ const App = () => {
               logout: logout,
             }}
           >
-            <main>{routes}</main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/jobs" element={<Jobs />} />
+              <Route path="/detail/:id" element={<DetailPage />} />
+              <Route path="/jobs/detail/:id" element={<DetailPage />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/manage-category" element={<ManageCategory />} />
+              <Route path="/create-job" element={<AddJob />} />
+              <Route path="/edit-job/:id" element={<AddJob />} />
+              <Route path="/createcv" element={<CvRouter />} />
+              <Route path="/createcv-profile" element={<CvRouter />} />
+              <Route path="/createcv-education" element={<CvRouter />} />
+              <Route path="/createcv-project" element={<CvRouter />} />
+              <Route path="/createcv-experience" element={<CvRouter />} />
+              <Route path="/createcv-extras" element={<CvRouter />} />
+              <Route path="/createcv-review" element={<CvRouter />} />
+              <Route path="/managecv" element={<CvList />} />
+              <Route path="/cvs/updatecv/:cvId" element={<CvUpdate />} />
+              <Route path="/cvs/details/:cvId" element={<CvsDetails />} />
+              <Route path="/favorite" element={<FavoritesJob />} />
+              <Route path="*" element={<Error />} />
+            </Routes>
           </AuthContext.Provider>
         </Auxx>
       </BrowserRouter>

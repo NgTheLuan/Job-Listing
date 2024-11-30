@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from '../../features/Form/FormCvs/Header';
 import Navbars from '../../components/Navbars';
 import Footers from '../../components/Footers';
@@ -19,13 +19,15 @@ const CvRouter = () => {
       <Navbars />
       <br /><br /><br />
       <Header />
-      <Route component={Overview} path="/createcv" exact={true} />
-      <Route component={Profiles} path="/createcv-profile" />
-      <Route component={Educations} path="/createcv-education" />
-      <Route component={Projects} path="/createcv-project" />
-      <Route component={Experiences} path="/createcv-experience" />
-      <Route component={Extras} path="/createcv-extras" />
-      <Route component={Review} path="/createcv-review" />
+      <Routes>
+        <Route component={Overview} path="/createcv" exact={true} />
+        <Route component={Profiles} path="/createcv-profile" />
+        <Route component={Educations} path="/createcv-education" />
+        <Route component={Projects} path="/createcv-project" />
+        <Route component={Experiences} path="/createcv-experience" />
+        <Route component={Extras} path="/createcv-extras" />
+        <Route component={Review} path="/createcv-review" />
+      </Routes>
       <Footers />
     </>
   );

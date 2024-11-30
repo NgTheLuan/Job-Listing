@@ -8,13 +8,12 @@ function LoadMore() {
   return (
     <>
       <div className="row">
-        {
-          <ul className="pagination">
-            <li>
-              <a onClick={() => setPage(page + 1)}>Load more</a>
-            </li>
-          </ul>
-        }
+        <ul className="pagination">
+          <li>
+            {/* eslint-disable-next-line */}
+            <a href="#" onClick={() => setPage(page + 1)}>Load more</a>
+          </li>
+        </ul>
       </div>
     </>
   );

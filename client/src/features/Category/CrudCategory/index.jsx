@@ -73,55 +73,55 @@ function CrudCategory() {
   return (
     <>
       <section
-        class="inner-header-title"
+        className="inner-header-title"
         style={{
           backgroundImage: `URL("https://www.mediafire.com/convkey/1c5e/tqju2ifqlf8e8dx6g.jpg")`,
         }}
       >
-        <div class="container">
-          <h1></h1>
+        <div className="container">
+          <h1> </h1>
         </div>
       </section>
 
-      <section class="bottom-search-form">
-        <div class="container">
-          <form class="bt-form" onSubmit={createCategory}>
-            <div class="col-md-3 col-sm-6">
+      <section className="bottom-search-form">
+        <div className="container">
+          <form className="bt-form" onSubmit={createCategory}>
+            <div className="col-md-3 col-sm-6">
               <input
                 name="category name"
                 type="text"
-                class="form-control"
+                className="form-control"
                 placeholder="Category name"
                 value={category}
                 required
                 onChange={(e) => setCategory(e.target.value)}
               />
             </div>
-            <div class="col-md-2 col-sm-6">
+            <div className="col-md-2 col-sm-6">
               <input
                 name="total"
                 type="number"
                 min="0"
-                class="form-control"
+                className="form-control"
                 placeholder="Total"
                 value={catetotal}
                 required
                 onChange={(e) => setCateTotal(e.target.value)}
               />
             </div>
-            <div class="col-md-4 col-sm-6">
+            <div className="col-md-4 col-sm-6">
               <input
                 name="icon"
                 type="url"
-                class="form-control"
+                className="form-control"
                 placeholder="Link icon"
                 value={cateicon}
                 required
                 onChange={(e) => setCateIcon(e.target.value)}
               />
             </div>
-            <div class="col-md-3 col-sm-6">
-              <button type="submit" class="btn btn-primary">
+            <div className="col-md-3 col-sm-6">
+              <button type="submit" className="btn btn-primary">
                 {onEdit ? 'Update' : 'Create'}
               </button>
             </div>
@@ -129,7 +129,7 @@ function CrudCategory() {
         </div>
       </section>
 
-      <div class="container">
+      <div className="container">
         <h1 style={{ textAlign: 'center', fontWeight: 'bold', color: '#07B107' }}>Categories Manager</h1>
         <br />
 
@@ -153,14 +153,14 @@ function CrudCategory() {
                     <td style={{ textAlign: 'center', width: '30%' }}>{category.career.careerName}</td>
                     <td style={{ textAlign: 'center', width: '10%' }}>{category.career.total}</td>
                     <td style={{ textAlign: 'center', width: '5%' }}>
-                      <a h={category.career.icon}>
-                        <img src={category.career.icon} class="img-responsive" alt="" />
+                      <a h={category.career.icon} href=' '>
+                        <img src={category.career.icon} className="img-responsive" alt="" />
                       </a>
                     </td>
                     <td>
                       <div style={{ textAlign: 'center' }}>
                         <i
-                          class="fas fa-edit"
+                          className="fas fa-edit"
                           style={{ fontSize: '180%', paddingRight: '5%', cursor: 'pointer', color: '#00DD00' }}
                           onClick={() =>
                             editCategory(
@@ -172,7 +172,7 @@ function CrudCategory() {
                           }
                         ></i>
                         <i
-                          class="fas fa-trash-alt"
+                          className="fas fa-trash-alt"
                           style={{ fontSize: '180%', paddingLeft: '5%', cursor: 'pointer', color: '#FF0033' }}
                           onClick={() => deleteCategory(category._id)}
                         ></i>

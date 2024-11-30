@@ -47,7 +47,7 @@ function FavoriteJob() {
       }
     };
     getUser();
-  }, [favojob]);
+  }, [favojob,auth.userId]);
 
   // if (favojob.length === 0)
   //   return <h2 style={{ textAlign: 'center', fontSize: '5rem', paddingTop: '5%' }}>Favorite Empty</h2>;
@@ -57,14 +57,14 @@ function FavoriteJob() {
       {loadding ? (
         <Loading />
       ) : (
-        <section class="accordion">
-          <div class="container">
-            <div class="col-md-12 col-sm-12">
-              <div class="simple-tab">
-                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                  <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingOne">
-                      <h4 class="panel-title">
+        <section className="accordion">
+          <div className="container">
+            <div className="col-md-12 col-sm-12">
+              <div className="simple-tab">
+                <div className="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                  <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingOne">
+                      <h4 className="panel-title">
                         <a
                           role="button"
                           data-toggle="collapse"
@@ -79,7 +79,7 @@ function FavoriteJob() {
                     </div>
                     <div
                       id="collapseOne"
-                      class="panel-collapse collapse in"
+                      className="panel-collapse collapse in"
                       role="tabpanel"
                       aria-labelledby="headingOne"
                     >
@@ -101,14 +101,14 @@ function FavoriteJob() {
                               <tbody>
                                 <tr>
                                   <td style={{ width: '15%', paddingTop: '2%' }}>
-                                    <img src={job.imgCom} style={{ width: '40%', paddingLeft: '10%' }} />
+                                    <img src={job.imgCom} alt="favorite jobs" style={{ width: '40%', paddingLeft: '10%' }} />
                                   </td>
                                   <td style={{ width: '20%', paddingTop: '3%' }}>{job.nameCom}</td>
                                   <td style={{ width: '20%', paddingTop: '3%' }}>{job.position}</td>
                                   <td style={{ width: '20%', paddingTop: '3%' }}>{job.location.city} city</td>
                                   <td style={{ width: '3%', paddingTop: '3%', textAlign: 'center', cursor: 'pointer' }}>
                                     <i
-                                      class="fas fa-trash-alt"
+                                      className="fas fa-trash-alt"
                                       onClick={() => {
                                         if (window.confirm('Are you sure to remove this favorite job?'))
                                           removeFavoriteJob(job._id);
@@ -124,11 +124,11 @@ function FavoriteJob() {
                       )}
                     </div>
                   </div>
-                  <div class="panel panel-default">
-                    <div class="panel-heading" role="tab" id="headingTwo">
-                      <h4 class="panel-title">
+                  <div className="panel panel-default">
+                    <div className="panel-heading" role="tab" id="headingTwo">
+                      <h4 className="panel-title">
                         <a
-                          class="collapsed"
+                          className="collapsed"
                           role="button"
                           data-toggle="collapse"
                           data-parent="#accordion"
@@ -140,8 +140,8 @@ function FavoriteJob() {
                         </a>
                       </h4>
                     </div>
-                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                      <div class="panel-body" style={{ textAlign: 'justify' }}>
+                    <div id="collapseTwo" className="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                      <div className="panel-body" style={{ textAlign: 'justify' }}>
                         <h3>What information should I include?</h3>
                         <p>
                           We want to hear about your latest accomplishments, your strengths, and how specific skills

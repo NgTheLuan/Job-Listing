@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useCV } from '../../../components/Store/CV';
 import { useEducation } from '../../../components/Store/Education';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
@@ -12,7 +12,7 @@ const Educations = (props) => {
     education: '',
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = useCallback(async (e) => {
     e.preventDefault();
     const data = {
       education: edu.education,
@@ -20,90 +20,85 @@ const Educations = (props) => {
       educationId: cvState.educationId,
     };
     await formActions.stepEducation(data);
-    props.history.push('/createcv-project');
-  };
+    props.navigate.push('/createcv-project');
+  }, [edu.education, cvState.cvId, cvState.educationId, formActions, props.navigate]);
 
   useEffect(() => {
     if (!cvState.educationId) {
       const fetch = async () => {
-        const education = await axios.post(`http://localhost:5000/api/cvs/createEducation/${cvState.cvId}`); //create empty CV
+        const education = await axios.post(`http://localhost:5000/api/cvs/createEducation/${cvState.cvId}`); // create empty CV
         cvActions.saveEducationId(education.data.cv._id);
       };
       fetch();
-    } else {
-      return () => handleSubmit;
     }
-  }, [cvState.cvId]);
+  }, [cvState.cvId, cvState.educationId, cvActions]);
 
   const previous = () => {
-    props.history.push('/createcv-profile');
+    props.navigate.push('/createcv-profile');
   };
 
   return (
-    <>
-      <section class="full-detail">
-        <form onSubmit={handleSubmit}>
-          <div class="container">
-            <div class="row bottom-mrg extra-mrg">
-              <h2 class="detail-title">Education Details</h2>
-              <div class="col-md-12 col-sm-12">
-                <CKEditor
-                  required
-                  id="education"
-                  data={formState.education}
-                  editor={ClassicEditor}
-                  onChange={(event, editor) => {
-                    const data = editor.getData();
-                    setEdu({ ...edu, education: data });
-                  }}
-                />
-              </div>
+    <section className="full-detail">
+      <form onSubmit={handleSubmit}>
+        <div className="container">
+          <div className="row bottom-mrg extra-mrg">
+            <h2 className="detail-title">Education Details</h2>
+            <div className="col-md-12 col-sm-12">
+              <CKEditor
+                required
+                id="education"
+                data={formState.education}
+                editor={ClassicEditor}
+                onChange={(event, editor) => {
+                  const data = editor.getData();
+                  setEdu({ ...edu, education: data });
+                }}
+              />
             </div>
-            <div class="detail pannel-footer">
-              <div class="col-md-12 col-sm-12">
-                <div class="detail-pannel-footer-btn pull-left">
-                  <button
-                    class="footer-btn choose-cover"
-                    onClick={previous}
-                    style={{
-                      backgroundColor: '#3DB810',
-                      border: 'none',
-                      color: 'white',
-                      padding: '15px 22px',
-                      textAlign: 'center',
-                      textDecoration: 'none',
-                      display: 'inline-block',
-                      fontSize: '16px',
-                    }}
-                  >
-                    Previous
-                  </button>
-                </div>
-
-                <div class="detail-pannel-footer-btn pull-right">
-                  <button
-                    class="footer-btn choose-cover"
-                    type="submit"
-                    style={{
-                      backgroundColor: '#3DB810',
-                      border: 'none',
-                      color: 'white',
-                      padding: '15px 22px',
-                      textAlign: 'center',
-                      textDecoration: 'none',
-                      display: 'inline-block',
-                      fontSize: '16px',
-                    }}
-                  >
-                    Save and continue
-                  </button>
-                </div>
+          </div>
+          <div className="detail pannel-footer">
+            <div className="col-md-12 col-sm-12">
+              <div className="detail-pannel-footer-btn pull-left">
+                <button
+                  className="footer-btn choose-cover"
+                  onClick={previous}
+                  style={{
+                    backgroundColor: '#3DB810',
+                    border: 'none',
+                    color: 'white',
+                    padding: '15px 22px',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    fontSize: '16px',
+                  }}
+                >
+                  Previous
+                </button>
+              </div>
+              <div className="detail-pannel-footer-btn pull-right">
+                <button
+                  className="footer-btn choose-cover"
+                  type="submit"
+                  style={{
+                    backgroundColor: '#3DB810',
+                    border: 'none',
+                    color: 'white',
+                    padding: '15px 22px',
+                    textAlign: 'center',
+                    textDecoration: 'none',
+                    display: 'inline-block',
+                    fontSize: '16px',
+                  }}
+                >
+                  Save and continue
+                </button>
               </div>
             </div>
           </div>
-        </form>
-      </section>
-    </>
+        </div>
+      </form>
+    </section>
   );
 };
 

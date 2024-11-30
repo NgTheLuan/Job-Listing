@@ -5,7 +5,7 @@ function Loading() {
   return (
     <>
       <div className="container">
-        <div class="spinner-4"></div>
+        <div className="spinner-4"></div>
       </div>
     </>
   );
